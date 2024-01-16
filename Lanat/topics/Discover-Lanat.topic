@@ -11,11 +11,19 @@
             A command line argument parser for Java 17 with ease of use and high customization possibilities in mind.
         </description>
 
-        <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
         <spotlight>
             <a href="Acquire-lanat.md" type="start" summary="Get started on how to get Lanat running">Get started</a>
             <a href="" type="library" summary="Check out the whole Lanat documentation">Reference</a>
         </spotlight>
-    </section-starting-page>
 
+        <primary>
+            <title>Quick tutorials</title>
+            <a href="">Define a command</a>
+        </primary>
+
+        <secondary>
+            <title>Troubleshooting</title>
+            <a href="">Command Template errors</a>
+        </secondary>
+    </section-starting-page>
 </topic>
