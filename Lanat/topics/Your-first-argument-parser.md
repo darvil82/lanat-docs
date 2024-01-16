@@ -1,6 +1,6 @@
 # Your first argument parser
 
-Let's assume we are working on a sample application that will receive two number arguments, and a
+Let's assume we are working on a sample application that will receive two number arguments, and an
 operator argument. The application will then perform the operation on the two numbers and print the
 result.
 
