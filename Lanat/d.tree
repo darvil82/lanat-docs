@@ -9,7 +9,7 @@
     <toc-element topic="About.md"/>
     <toc-element toc-title="Get Started">
         <toc-element topic="Acquire-lanat.md"/>
-        <toc-element topic="Creating-your-first-argument-parser.md"/>
+        <toc-element topic="Your-first-argument-parser.md"/>
 
     </toc-element>
 </instance-profile>

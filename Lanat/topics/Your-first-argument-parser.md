@@ -31,6 +31,9 @@ The application will print `-4.8`.
 > `-` in this tutorial.
 {style="note"}
 
+In this tutorial we will not dwell into the details of all the options used. You can learn more about
+them in the documentation.
+
 ## Defining the operations
 
 Let's create an enum that will make our job easier when defining the operations.
@@ -77,11 +80,16 @@ Lastly, we'll define the code needed to make the program perform the desired beh
 
 ````Java
 public static void main(String[] args) {
-	var result = ArgumentParser.parseFromInto(App.class, CLInput.from(args));
+	var result = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
 
 	System.out.println(result.op.execute(result.a, result.b));
 }
 ````
+
+> It doesn't matter where the ``main`` method is located. It can be in the command template, or in
+> any other class. In this tutorial, we will put it in the command template class we created.
+{style="note"}
+
 
 ## An issue in the way
 
@@ -98,7 +106,7 @@ Exception in thread "main" java.lang.IllegalStateException: The argument must ha
 	at lanat.ArgumentParser.from(ArgumentParser.java:75)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:123)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:143)
-	at App.main(App.java:18)
+	at MyProgram.main(MyProgram.java:18)
 `````
 {collapsible="true" collapsed-title="Exception: The argument must have a type defined."}
 
@@ -142,3 +150,50 @@ experiment with the different features of Lanat.
 
 We've just scratched the surface of what Lanat can do. You can learn more about Lanat by reading
 the rest of the documentation. Have fun!
+
+### Complete example source code {collapsible="true" default-state="collapsed"}
+
+````Java
+@Command.Define(names = "my-program")
+public class MyProgram extends CommandTemplate {
+	@Argument.Define(required = true, positional = true)
+	public double a;
+	
+	@Argument.Define(required = true, positional = true)
+	public double b;
+	
+	@Argument.Define
+	public Operation op;
+	
+	@InitDef
+	public static void beforeInit(CommandBuildHelper helper) {
+		helper.<EnumArgumentType<Operation>, Operation>arg("op")
+			.withArgType(new EnumArgumentType<>(Operation.ADD))
+			.onOk(value -> System.out.println("Operation explicitly set to " + value));
+	}
+	
+	public enum Operation {
+		ADD,
+		SUBTRACT,
+		MULTIPLY,
+		DIVIDE;
+		
+		public double execute(double a, double b) {
+			return switch (this) {
+				case ADD -> a + b;
+				case SUBTRACT -> a - b;
+				case MULTIPLY -> a * b;
+				case DIVIDE -> a / b;
+			};
+		}
+	}
+	
+	
+	// entry point here
+	public static void main(String[] args) {
+		var result = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
+	
+		System.out.println(result.op.execute(result.a, result.b));
+	}
+}
+````
