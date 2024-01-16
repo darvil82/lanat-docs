@@ -5,7 +5,7 @@
     <variables>
         <primary-color>aqua</primary-color>
     </variables>
-    <build-profile instance="d">
+    <build-profile instance="ld">
         <variables>
             <noindex-content>true</noindex-content>
         </variables>
