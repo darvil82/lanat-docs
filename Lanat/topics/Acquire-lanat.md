@@ -1,3 +1,7 @@
+---
+switcher-label: Build System
+---
+
 # Acquire Lanat
 
 The Lanat package available on a Repsy repository and on GitHub.
@@ -18,21 +22,17 @@ Repository
 Dependency
 : `io.repsy.darvil:lanat:%latest_version%`
 
-### Gradle example { collapsible="true" default-state="collapsed" }
+
+### Example
+
+Add the repository to the ``repositories`` block:
 
 ````Kotlin
 repositories {
     maven("https://repsy.io/mvn/darvil/java")
 }
 ````
-
-````Kotlin
-dependencies {
-    implementation("io.repsy.darvil:lanat:%latest_version%")
-}
-````
-
-### Maven example { collapsible="true" default-state="collapsed" }
+{switcher-key="Gradle"}
 
 ````XML
 <repositories>
@@ -42,6 +42,16 @@ dependencies {
     </repository>
 </repositories>
 ````
+{switcher-key="Maven"}
+
+Then, add the dependency to the ``dependencies`` block:
+
+````Kotlin
+dependencies {
+    implementation("io.repsy.darvil:lanat:%latest_version%")
+}
+````
+{switcher-key="Gradle"}
 
 ````XML
 <dependencies>
@@ -52,6 +62,7 @@ dependencies {
     </dependency>
 </dependencies>
 ````
+{switcher-key="Maven"}
 
 ## Manually downloading the JAR
 
