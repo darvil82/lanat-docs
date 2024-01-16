@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Section Starting Page" id="Discover-Lanat" help-id="Section-Starting-Page;Start-page">
+
+    <section-starting-page>
+        <title>Discover Lanat</title>
+        <description>
+            A command line argument parser for Java 17 with ease of use and high customization possibilities in mind.
+        </description>
+
+        <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
+        <spotlight>
+            <a href="Acquire-lanat.md" type="start" summary="Get started on how to get Lanat running">Get started</a>
+            <a href="" type="library" summary="Check out the whole Lanat documentation">Reference</a>
+        </spotlight>
+    </section-starting-page>
+
+</topic>

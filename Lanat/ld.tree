@@ -2,12 +2,11 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="d"
-                 name="Docs"
-                  start-page="About.md">
+<instance-profile id="ld"
+                 name="Lanat Documentation"
+                  start-page="Discover-Lanat.topic">
 
-    <toc-element topic="About.md"/>
-    <toc-element toc-title="Get Started">
+    <toc-element toc-title="Discover Lanat" topic="Discover-Lanat.topic">
         <toc-element topic="Acquire-lanat.md"/>
         <toc-element topic="Your-first-argument-parser.md"/>
 
