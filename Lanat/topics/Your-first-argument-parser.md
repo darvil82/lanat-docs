@@ -148,14 +148,10 @@ be called when the argument is successfully parsed.
 
 Running the program now will result in the following output:
 
-````Console
-$ lanat-example 5 2
-7.0
+![example-result.png](example-result.png)
 
-$ lanat-example 5 2 --op subtract
-Operation explicitly set to SUBTRACT
-3.0
-````
+> Notice how Lanat shows an error message for you when the user incorrectly provides an unknown value.
+> We will learn more about how errors are handled later.
 
 ## Conclusion
 
