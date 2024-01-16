@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="d"
+                 name="Docs"
+                  start-page="About.md">
+
+    <toc-element topic="About.md"/>
+    <toc-element toc-title="Get Started">
+        <toc-element topic="Acquire-lanat.md"/>
+        <toc-element topic="Creating-your-first-argument-parser.md"/>
+
+    </toc-element>
+</instance-profile>
