@@ -4,7 +4,7 @@ switcher-label: Build System
 
 # Acquire Lanat
 
-The Lanat package available on a Repsy repository and on GitHub.
+The Lanat package is available on a Repsy repository and on GitHub.
 You may get it from either of these sources.
 
 ## Adding the dependency to your project
