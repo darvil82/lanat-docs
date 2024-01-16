@@ -96,19 +96,25 @@ public static void main(String[] args) {
 Attempting to run the program at this point will result in an error.
 
 ````Console
-Exception in thread "main" java.lang.IllegalStateException: The argument must have a type defined.
-	at lanat.ArgumentBuilder.build(ArgumentBuilder.java:230)
-	at lanat.utils.ArgumentAdder.addArgument(ArgumentAdder.java:34)
+Exception in thread "main" CommandTemplateException: Could not build argument from field 'op': The argument must have a type defined.
+	at lanat.Command.lambda$from$recursive$8(Command.java:375)
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at lanat.Command.from$recursive(Command.java:371)
+	at lanat.Command.from$recursive(Command.java:369)
 	at lanat.Command.<init>(Command.java:108)
 	at lanat.ArgumentParser.<init>(ArgumentParser.java:54)
 	at lanat.ArgumentParser.from(ArgumentParser.java:75)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:123)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:143)
-	at MyProgram.main(MyProgram.java:18)
+	at MyProgram.main(MyProgram.java:25)
 `````
 {collapsible="true" collapsed-title="Exception: The argument must have a type defined."}
+
+````Console
+Could not build argument from field 'op':
+	The argument must have a type defined.
+`````
+
+
 
 Why does this occur?
 
@@ -117,6 +123,7 @@ cannot be automatically inferred by Lanat. We need to define the type of the arg
 
 Lanat can infer the type of many different types of arguments, including primitive types, boxed
 primitive types, and even some classes. Enums cannot be inferred as they are more complex types.
+
 
 ## Fixing the issue
 
@@ -131,6 +138,13 @@ public static void beforeInit(CommandBuildHelper helper) {
 		.onOk(value -> System.out.println("Operation explicitly set to " + value));
 }
 ````
+
+As you can see, we not only defined the type of the argument, but we also added a callback that will
+be called when the argument is successfully parsed.
+
+> The ``beforeInit`` method is called right before the command is initialized with all the arguments.
+> It receives a ``CommandBuildHelper`` instance, which can be used to alter the arguments before
+> they are built.
 
 Running the program now will result in the following output:
 
