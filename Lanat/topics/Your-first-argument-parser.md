@@ -61,7 +61,7 @@ public enum Operation {
 Now let's create a Command template, which will define the structure of our command.
 
 ````Java
-@Command.Define(name = "my-program")
+@Command.Define
 public class MyProgram extends CommandTemplate {
 	@Argument.Define(required = true, positional = true)
 	public double a;
@@ -148,10 +148,11 @@ be called when the argument is successfully parsed.
 
 Running the program now will result in the following output:
 
-![example-result.png](example-result.png)
+![example-result.png](example-result.png "Result on the terminal")
 
 > Notice how Lanat shows an error message for you when the user incorrectly provides an unknown value.
 > We will learn more about how errors are handled later.
+
 
 ## Conclusion
 
@@ -164,7 +165,7 @@ the rest of the documentation. Have fun!
 ### Complete example source code {collapsible="true" default-state="collapsed"}
 
 ````Java
-@Command.Define(names = "my-program")
+@Command.Define
 public class MyProgram extends CommandTemplate {
 	@Argument.Define(required = true, positional = true)
 	public double a;
