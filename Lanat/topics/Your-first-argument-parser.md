@@ -133,8 +133,7 @@ In order to fix this issue, let's head back to the ``MyProgram`` class and defin
 ````Java
 @InitDef
 public static void beforeInit(CommandBuildHelper helper) {
-	helper.<EnumArgumentType<Operation>, Operation>arg("op")
-		.withArgType(new EnumArgumentType<>(Operation.ADD))
+	helper.argWithType("op", new EnumArgumentType<>(Operation.ADD))
 		.onOk(value -> System.out.println("Operation explicitly set to " + value));
 }
 ````
@@ -178,8 +177,7 @@ public class MyProgram extends CommandTemplate {
 	
 	@InitDef
 	public static void beforeInit(CommandBuildHelper helper) {
-		helper.<EnumArgumentType<Operation>, Operation>arg("op")
-			.withArgType(new EnumArgumentType<>(Operation.ADD))
+		helper.argWithType("op", new EnumArgumentType<>(Operation.ADD))
 			.onOk(value -> System.out.println("Operation explicitly set to " + value));
 	}
 	
