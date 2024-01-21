@@ -11,5 +11,8 @@
         <toc-element topic="Your-first-argument-parser.md"/>
 
     </toc-element>
-    <toc-element topic="Commands.md"/>
+    <toc-element topic="Commands.md">
+        <toc-element topic="Sub-Commands.md"/>
+    </toc-element>
+    <toc-element topic="Arguments.md"/>
 </instance-profile>

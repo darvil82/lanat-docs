@@ -42,6 +42,12 @@ Here we have defined a new command called `MyCommand`. Commands defined by this 
 They are called templates because what they do is define the structure of a command, but they are not
 an actual command instance _yet_.
 
+> A command template class must _always_ inherit from ``CommandTemplate``.
+> 
+> Note that a class can inherit from any other class as long as in the end of the inheritance chain there is a class that
+> extends ``CommandTemplate``. We'll see why this can be useful in the next sections.
+{style="note"}
+
 In order to add an argument to a command, add a property to the class and annotate it with `@Argument.Define`:
 
 ````Java
@@ -88,6 +94,8 @@ var myCommand = new ArgumentParser("MyCommand") {{
 > in order to use this syntax. This is because subclasses of ``ArgumentParser`` need to have access to some utility
 > classes from that library.
 {style="warning"}
+
+We will use this anonymous subclass syntax in the following sections.
 
 </tip>
 
@@ -182,7 +190,7 @@ handle the case where the user doesn't provide a value for it.
 
 We print the value of ``input.userName``, but if the user doesn't provide a value for it, the value of the property
 will be ``null``. In this case, this will print ``Hello, null!``. In worse cases, this could cause a
-``NullPointerException``. We'll see how to make this better in the next section.
+``NullPointerException``. We'll see how to make this better in the next sections.
 {switcher-key="Templates"}
 
 ``input.get("userName")`` returns an ``Optional`` of ``Object``, then we call ``get`` on it to get the actual value.

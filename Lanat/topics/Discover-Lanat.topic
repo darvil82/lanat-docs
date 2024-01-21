@@ -18,7 +18,7 @@
 
         <primary>
             <title>Quick tutorials</title>
-            <a href="">Define a command</a>
+            <a href="Commands.md" summary="Learn how to define a Command with Lanat">Define a command</a>
         </primary>
 
         <secondary>
