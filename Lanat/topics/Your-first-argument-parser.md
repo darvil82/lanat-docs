@@ -80,7 +80,7 @@ Lastly, we'll define the code needed to make the program perform the desired beh
 
 ````Java
 public static void main(String[] args) {
-	var result = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
+	var result = ArgumentParser.parseFromInto(MyProgram.class, args);
 
 	System.out.println(result.op.execute(result.a, result.b));
 }

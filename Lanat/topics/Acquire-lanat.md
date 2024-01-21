@@ -17,10 +17,10 @@ build file to use Lanat.
 
 { type="narrow" }
 Repository
-: `https://repsy.io/mvn/darvil/java`
+: `%repo%`
 
 Dependency
-: `io.repsy.darvil:lanat:%latest_version%`
+: `%group%:lanat:%latest_version%`
 
 
 ### Example
@@ -37,8 +37,8 @@ repositories {
 ````XML
 <repositories>
     <repository>
-        <id>repsy</id>
-        <url>https://repsy.io/mvn/darvil/java</url>
+        <id>darvil</id>
+        <url>%repo%</url>
     </repository>
 </repositories>
 ````
@@ -48,7 +48,7 @@ Then, add the dependency to the ``dependencies`` block:
 
 ````Kotlin
 dependencies {
-    implementation("io.repsy.darvil:lanat:%latest_version%")
+    implementation("%group%:lanat:%latest_version%")
 }
 ````
 {switcher-key="Gradle"}
@@ -56,7 +56,7 @@ dependencies {
 ````XML
 <dependencies>
     <dependency>
-        <groupId>io.repsy.darvil</groupId>
+        <groupId>%group%</groupId>
         <artifactId>lanat</artifactId>
         <version>%latest_version%</version>
     </dependency>
