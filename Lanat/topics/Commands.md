@@ -74,9 +74,6 @@ If you compare this to the templates method, you will notice that this is a lot 
 dynamic, as you can define arguments and commands at runtime, instead of compile time. (e.g. define an argument only
 if a certain condition is met)
 
-At this point, ``myCommand`` is now an actual command instance which can be used to parse input from the user.
-Let's take a look at how to do that.
-
 <tip>
 
 You may also define the commands by subclassing ``ArgumentParser``:
@@ -92,6 +89,9 @@ var myCommand = new ArgumentParser("MyCommand") {{
 {style="warning"}
 
 </tip>
+
+At this point, ``myCommand`` is now an actual command instance which can be used to parse input from the user.
+Let's take a look at how to do that.
 
 
 ## Using the command
