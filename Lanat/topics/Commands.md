@@ -22,7 +22,7 @@ Lanat allows you to define commands in two ways. One uses the properties of a cl
 arguments, which belong to a command that is represented by the class itself. The other method is more imperative and
 defines the commands and arguments in a more traditional way.
 
-Both methods have their advantages and disadvantages, and you should choose the one that fits you best.
+Both methods have their advantages and disadvantages, which we will see in the following sections.
 
 > Use the **switch option** at the top of the page to switch between the two methods and see the differences.
 {style="note"}
