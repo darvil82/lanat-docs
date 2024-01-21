@@ -138,7 +138,7 @@ void main(String[] args) {
 }
 ```
 
-For now, we will only gathered the input by calling ``getResult`` on the `AfterParseOptions` instance returned by the
+For now, we will gather the input by calling ``getResult`` on the `AfterParseOptions` instance returned by the
 ``parse`` method. This returns us a ``ParseResultRoot`` instance, which allows us to access the parsed values.
 
 ```Java
