@@ -5,7 +5,7 @@
     <variables>
         <primary-color>aqua</primary-color>
         <custom-favicons>logo_tiny.png</custom-favicons>
-        <header-logo>logo_dark.png</header-logo>
+        <header-logo>logo.png</header-logo>
         <product-web-url>https://darvil82.github.io/lanat-web/</product-web-url>
     </variables>
 
