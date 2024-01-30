@@ -96,24 +96,23 @@ public static void main(String[] args) {
 Attempting to run the program at this point will result in an error.
 
 ````Console
-Exception in thread "main" CommandTemplateException: Could not build argument from field 'op': The argument must have a type defined.
-	at lanat.Command.lambda$from$recursive$8(Command.java:375)
+Exception in thread "main" CommandTemplateException: Could not infer the argument type from the field 'op' with type 'Operation'.
+	at lanat.ArgumentBuilder.setTypeFromField(ArgumentBuilder.java:243)
+	at lanat.Command.lambda$from$10(Command.java:437)
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at lanat.Command.from$recursive(Command.java:369)
-	at lanat.Command.<init>(Command.java:108)
+	at lanat.Command.from(Command.java:437)
+	at lanat.Command.<init>(Command.java:107)
 	at lanat.ArgumentParser.<init>(ArgumentParser.java:54)
 	at lanat.ArgumentParser.from(ArgumentParser.java:75)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:123)
 	at lanat.ArgumentParser.parseFromInto(ArgumentParser.java:143)
-	at MyProgram.main(MyProgram.java:25)
+	at MyProgram.main(MyProgram.java:40)
 `````
-{collapsible="true" collapsed-title="Exception: The argument must have a type defined."}
+{collapsible="true" collapsed-title="Exception: Could not infer the argument type from the field 'op' with type 'Operation'."}
 
 ````Console
-Could not build argument from field 'op':
-	The argument must have a type defined.
+Could not infer the argument type from the field 'op' with type 'Operation'.
 `````
-
 
 
 Why does this occur?
