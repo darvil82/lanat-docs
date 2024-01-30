@@ -14,5 +14,9 @@
     <toc-element topic="Commands.md">
         <toc-element topic="Sub-Commands.md"/>
     </toc-element>
-    <toc-element topic="Arguments.md"/>
+    <toc-element topic="Arguments.md">
+        <toc-element topic="Argument-Types.md">
+            <toc-element topic="Creating-an-argument-type.md"/>
+        </toc-element>
+    </toc-element>
 </instance-profile>
