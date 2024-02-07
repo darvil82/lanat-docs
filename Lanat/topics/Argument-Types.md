@@ -3,31 +3,87 @@
 When creating arguments, these must know what kind of value they are expecting to receive. Not only that, but they
 also have to know how to properly convert the user input into that value.
 
-That's the job of an argument type. An argument type is a class that extends ``ArgumentType<T>``. It defines how
-to parse a number of strings into a value of type ``T``, and what occurs when the parsing fails, among other things.
+That's the job of an argument type. An argument type is a class that extends `ArgumentType<T>`. It defines how
+to parse a number of strings into a value of type `T`, and what occurs when the parsing fails, among other things.
 
 
 ## Default Argument types
 
 Lanat comes with a set of default argument types that you can use out of the box.
 
-`StringArgumentType`
-:
-Parses a single string. Essentially just forwards the user input.
+<deflist>
 
-`StdinArgumentType`
-:
-Parses the standard input stream. This is useful for commands that receive input from a pipe.
+<def title="StringArgumentType">
+	Parses a single string. Essentially just forwards the user input.
+</def>
 
-`CounterArgumentType`
-:
-Receives no input. It's return value is the number of times it has been used.
+<def title="StdinArgumentType">
+	Parses the standard input stream. This is useful for commands that receive input from a pipe.
+</def>
 
-`BooleanArgumentType`
-:
-Parses a boolean value. Accepts `true`, `false`, `yes`, `no`, `1` and `0`.
+<def title="CounterArgumentType">
+	Receives no input. It's return value is the number of times it has been used.
+</def>
 
-`ActionArgumentType`
-:
-Receives no input. It returns `true` if the argument was used. This type is mostly used for when you want to make
-an argument execute some code when it is used, but you don't want it to receive any input.
+<def title="BooleanArgumentType">
+	Parses a boolean value. Accepts <code>true</code>, <code>false</code>, <code>yes</code>, <code>no</code>, <code>1</code> and <code>0</code>.
+</def>
+
+<def title="ActionArgumentType">
+	Receives no input. It returns <code>true</code> if the argument was used. This type is mostly used for when you want
+	to make an argument execute some code when it is used, but you don't want it to receive any input.
+</def>
+
+<def title="TupleArgumentType">
+	Parses multiple values received from the user by using the argument type provided in the constructor.
+	Returns a <code>T[]</code>.
+</def>
+
+<def title="NumberRangeArgumentType">
+	Parses a number within a given range. The range is given in the constructor.
+</def>
+
+<def title="KeyValuesArgumentType">
+	Takes key-value pairs. The key is a string, and the value is of the argument type given in the
+	constructor. The key-value pairs are separated by an equals sign (e.g. <code>key=value</code>).
+</def>
+
+<def title="EnumArgumentType">
+	An argument type that takes an enum value.
+	By supplying a default value in the constructor, the enum type is inferred.
+	<p>
+		The user can specify any of the enum values by their names.
+		The names are case-insensitive.
+	</p>
+</def>
+
+</deflist>
+
+
+### Numeric types
+
+Lanat provides a set of argument types to parse all kinds of numeric values. Some of them are: <code>IntegerArgumentType</code>,
+<code>LongArgumentType</code>, <code>FloatArgumentType</code>, <code>DoubleArgumentType</code>, etc.
+
+### Other types
+
+<deflist>
+
+<def title="TryParseArgumentType">
+	Attempts to parse a string into the type given in the constructor.
+	The type given must have a static <code>valueOf(String)}</code>, <code>parse(String)}</code>, or
+	<code>from(String)}</code> method, or a constructor that takes a string.
+	If none of these are found, an exception will be thrown.
+	<tip>
+		This argument type will first attempt to infer the argument type from the type given in the constructor,
+		and if it fails to do so, it will use the method approach.
+	</tip>
+</def>
+
+<def title="FromParseableArgumentType">
+	An argument type that uses a <code>Parseable</code> to parse values. If the <code>parseValues(String[])</code>
+	method of the given <code>Parseable</code> returns <code>null</code>, an error is added.
+	The error message can be specified in the constructor.
+</def>
+
+</deflist>
