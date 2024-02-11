@@ -57,18 +57,6 @@ Lanat comes with a set of default argument types that you can use out of the box
 	</p>
 </def>
 
-</deflist>
-
-
-### Numeric types
-
-Lanat provides a set of argument types to parse all kinds of numeric values. Some of them are: <code>IntegerArgumentType</code>,
-<code>LongArgumentType</code>, <code>FloatArgumentType</code>, <code>DoubleArgumentType</code>, etc.
-
-### Other types
-
-<deflist>
-
 <def title="TryParseArgumentType">
 	Attempts to parse a string into the type given in the constructor.
 	The type given must have a static <code>valueOf(String)}</code>, <code>parse(String)}</code>, or
@@ -80,10 +68,33 @@ Lanat provides a set of argument types to parse all kinds of numeric values. Som
 	</tip>
 </def>
 
+</deflist>
+
+
+### Numeric types
+
+Lanat provides a set of argument types to parse all kinds of numeric values. Some of them are: <code>IntegerArgumentType</code>,
+<code>LongArgumentType</code>, <code>FloatArgumentType</code>, <code>DoubleArgumentType</code>, etc.
+
+
+### Definition helpers
+
+These argument types provide ways to define new argument types.
+
+<deflist>
+
 <def title="FromParseableArgumentType">
 	An argument type that uses a <code>Parseable</code> to parse values. If the <code>parseValues(String[])</code>
 	method of the given <code>Parseable</code> returns <code>null</code>, an error is added.
 	The error message can be specified in the constructor.
 </def>
 
+<def title="SimpleArgumentType">
+	An argument type that allows to define its behavior by using a builder pattern. This basically provides another
+	way to define an argument type. See 
+</def>
+
 </deflist>
+
+Check out [how to create argument types](Creating-an-argument-type.md#other-ways-of-creating-an-argument-type) for more 
+information on how to create your own argument types.
