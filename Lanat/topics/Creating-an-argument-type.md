@@ -10,8 +10,6 @@ provides a way to parse user input into a specific type.
 
 ```Java
 class URLArgumentType extends ArgumentType<URL> {
-	public URLArgumentType() { }
-
 	@Override
 	public @Nullable URL parseValues(@NotNull String[] args) {
 		try {
