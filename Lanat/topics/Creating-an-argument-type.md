@@ -109,4 +109,3 @@ Argument.create(
 
 > As you may see, the main limitation of this method is that you cannot show different error messages depending on the
 > input.
-{style="warning"}
