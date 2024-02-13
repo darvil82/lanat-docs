@@ -90,10 +90,6 @@ var myCommand = new ArgumentParser("MyCommand") {{
 }};
 ```
 
-<include from="Warnings.md" element-id="utils-lib">
-	<var name="what" value="this syntax. This is because subclasses of ArgumentParser need to have access to some utility classes from that library"/>
-</include>
-
 We will use this anonymous subclass syntax in the following sections.
 
 </tip>

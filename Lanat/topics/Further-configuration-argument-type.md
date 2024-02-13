@@ -3,9 +3,7 @@
 As previously mentioned, argument types can not just receive a single value. When creating a new argument type,
 you can specify how many values it can receive, how many times it can be used, and more.
 
-<deflist>
-
-<def title="Required arg value count">
+## Required Arg value count
 
 Specify how many values the argument type should receive.
 This is done by overriding the `getRequiredArgValueCount` method.
@@ -19,16 +17,10 @@ public @NotNull Range getRequiredArgValueCount() {
 
 In this example, the argument type will require the user to provide at least 2 values, and at most 10.
 
-<include from="Warnings.md" element-id="utils-lib">
-	<var name="what" value="the Range class"/>
-</include>
-
 This will impact the number of values that the argument type can receive when its `parseValues` method is called.
 
-</def>
 
-
-<def title="Required Usage count">
+## Required Usage count
 
 Specify how many times the argument type should be used.
 
@@ -44,16 +36,11 @@ In this example, the argument type will require the user to use it at least once
 > The minimum number of times can not be zero. In order to allow the argument type to not be used, mark
 > the argument that will use this type as optional.
 
-<include from="Warnings.md" element-id="utils-lib">
-	<var name="what" value="the Range class"/>
-</include>
-
 This will impact the number of times the `parseValues` method will be called. For each time the argument type is used,
 the `parseValues` method will be called once with the values provided by the user.
 
-</def>
 
-<def title="Initial Value">
+## Initial Value
 
 When an argument type invokes the `super` constructor, it may provide an initial value for the argument type.
 
@@ -73,6 +60,44 @@ initial value, which is `0`.
 > The initial value can be retrieved at any time by calling the `getInitialValue` method.
 
 
-</def>
+## Registering an argument subtype
 
-</deflist>
+An argument type may have subtypes. This is useful when an argument type needs to rely on other argument types to parse
+its values.
+
+Let's look at the implementation of `TupleArgumentType`:
+
+```Java
+public class TupleArgumentType<T> extends ArgumentType<T[]> {
+	private final @NotNull Range valueCount;
+	private final @NotNull ArgumentType<T> argumentType;
+
+	public TupleArgumentType(@NotNull Range valueCount, @NotNull ArgumentType<T> argumentType) {
+		this.valueCount = valueCount;
+		this.registerSubType(this.argumentType = argumentType);
+	}
+
+...
+```
+{collapsible="true" collapsed-title-line-number="7" default-state="collapsed"}
+
+`TupleArgumentType` is a good example of an argument type that has subtypes. It is used to parse any number of values
+into an array of a specific type. It relies on another argument type to parse the values.
+
+This is how the `parseValues` method is implemented (simplified):
+
+```Java
+@Override
+public T[] parseValues(@NotNull String @NotNull... values) {
+	var result = new Object[values.length];
+
+	for (int i = 0; i < values.length; i++) {
+		result[i] = this.argumentType.parseValues(values[i]);
+	}
+
+	return (T[])result;
+}
+```
+
+> You can technically use a subtype without registering it, but it is recommended to do so. When a subtype is registered,
+> any errors added by the subtype will be automatically dispatched to the parent argument type.
