@@ -20,3 +20,8 @@ An argument may appear more than once in the input, and each time it appears, th
 
 The "sanitized" values that you can see between the Argument and Argument Type nodes are the values that the argument
 type instance will receive in the parameter of its `parseValues` method.
+
+
+### Error collection
+
+![errorcollection.png](errorcollection.png)
