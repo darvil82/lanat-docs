@@ -91,7 +91,7 @@ These argument types provide ways to define new argument types.
 
 <def title="SimpleArgumentType">
 	An argument type that allows to define its behavior by using a builder pattern. This basically provides another
-	way to define an argument type. See 
+	way to define an argument type.
 </def>
 
 </deflist>
