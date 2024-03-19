@@ -49,12 +49,15 @@ Lanat comes with a set of default argument types that you can use out of the box
 </def>
 
 <def title="EnumArgumentType">
-	An argument type that takes an enum value.
-	By supplying a default value in the constructor, the enum type is inferred.
+	An argument type that takes a valid enum value.
 	<p>
 		The user can specify any of the enum values by their names.
 		The names are case-insensitive.
 	</p>
+</def>
+
+<def title="OptListArgumentType">
+	An argument type that restricts a possible value out of a list of values.
 </def>
 
 <def title="TryParseArgumentType">
