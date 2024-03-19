@@ -69,13 +69,14 @@ some cases you may need to use a more complex logic to define them. For example,
 type that requires a constructor with parameters.
 
 In these cases, you can use either the `beforeInit` or `afterInit` static methods, which are explained below.
-These methods are called by Lanat when it is creating the command instance from the command template class.
+When added to a command template class, these methods are called by Lanat when it is creating the command instance
+from the command template class.
 They must be annotated with `@InitDef`.
 
 
 ### The `beforeInit` method
 
-This method is called before the command instance is created. It receives a ``CommandBuildContext`` instance, which
+This method is called before the arguments are added to the command. It receives a ``CommandBuildContext`` instance, which
 allows to access the argument builders. At the point of this method being called, the argument builders have already
 been created with the properties defined by the annotations, except for the `type()` property, which is not yet set.
 
