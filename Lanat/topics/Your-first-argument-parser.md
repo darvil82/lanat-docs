@@ -131,8 +131,8 @@ In order to fix this issue, let's head back to the ``MyProgram`` class and defin
 
 ````Java
 @InitDef
-public static void beforeInit(CommandBuildHelper helper) {
-	helper.argWithType("op", new EnumArgumentType<>(Operation.ADD))
+public static void beforeInit(CommandBuildContext ctx) {
+	ctx.argWithType("op", new EnumArgumentType<>(Operation.ADD))
 		.onOk(value -> System.out.println("Operation explicitly set to " + value));
 }
 ````
@@ -141,7 +141,7 @@ As you can see, we not only defined the type of the argument, but we also added 
 be called when the argument is successfully parsed.
 
 > The ``beforeInit`` method is called right before the command is initialized with all the arguments.
-> It receives a ``CommandBuildHelper`` instance, which can be used to alter the arguments before
+> It receives a ``CommandBuildContext`` instance, which can be used to alter the arguments before
 > they are built.
 
 Running the program now will result in the following output:
@@ -175,8 +175,8 @@ public class MyProgram extends CommandTemplate {
 	public Operation op;
 	
 	@InitDef
-	public static void beforeInit(CommandBuildHelper helper) {
-		helper.argWithType("op", new EnumArgumentType<>(Operation.ADD))
+	public static void beforeInit(CommandBuildContext ctx) {
+		ctx.argWithType("op", new EnumArgumentType<>(Operation.ADD))
 			.onOk(value -> System.out.println("Operation explicitly set to " + value));
 	}
 	
