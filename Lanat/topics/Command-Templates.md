@@ -102,8 +102,8 @@ As mentioned before, any property of them may be altered at this point.
 
 ### The `afterInit` method
 
-This method is called right after all the argument builders have been built into argument instances. It receives the
-actual command instance.
+This method is called right after all the argument builders have been built into argument instances, and they have been
+added to the command instance. It receives the actual command object.
 
 At this point it is possible to do things such as creating a group and adding arguments to it. Example:
 
