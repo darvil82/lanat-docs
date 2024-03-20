@@ -13,7 +13,9 @@
     </toc-element>
     <toc-element topic="Commands.md">
         <toc-element topic="Sub-Commands.md"/>
-        <toc-element topic="Command-Templates.md"/>
+        <toc-element topic="Command-Templates.md">
+            <toc-element topic="Command-template-Inheritance.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Arguments.md">
         <toc-element topic="Argument-options.md"/>

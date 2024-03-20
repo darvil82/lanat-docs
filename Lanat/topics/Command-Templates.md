@@ -15,7 +15,7 @@ See more about defining a command [here](Commands.md#define-a-command-template).
 ## The `@Command.Define` annotation
 
 Values may be provided to the annotation to specify the names and description of the command.
-If no name is provided, the name of the class will be used as the name of the command.
+If no name is provided, the name of the class will be used instead.
 
 The description is also optional, and it will be used to provide a summary of the purpose of the command in the
 help message.
@@ -137,6 +137,27 @@ class MyCommand extends CommandTemplate {
 ```
 
 
+## The ``@CommandAccessor`` annotation
+
+This annotation is used to specify a property that will hold an instance of a sub-command once it is parsed.
+
+```Java
+@Command.Define
+class MyCommand extends CommandTemplate {
+	@CommandAccessor
+	public SubCommand subCmd;
+	
+	@Command.Define
+	public static class SubCommand extends CommandTemplate { }
+}
+```
+
+Once ``SubCommand`` is instantiated by Lanat, it will be automatically assigned to the ``subCmd`` property of
+``MyCommand`` upon instantiation. This will later allow you to access the inner command's properties.
+
+> If there is a sub-command template class defined inside another template class, but there's no property annotated
+> with ``@CommandAccessor`` in the outer class, a ``CommandTemplateException`` will be thrown.
+> {style="warning"}
 
 
 <seealso>
