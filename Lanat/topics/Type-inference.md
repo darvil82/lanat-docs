@@ -9,7 +9,6 @@ class MyCommand extends CommandTemplate {
 	public int number;
 }
 ```
-{collapsible="true" default-state="collapsed" collapsed-title-line-number="3"}
 
 As you can see, it is rather redundant to specify the type of the argument as `IntegerArgumentType` when the property
 is of type `int`. Lanat can infer the type of the argument from the type of the property that it is assigned to.
