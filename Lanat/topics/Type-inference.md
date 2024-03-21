@@ -60,7 +60,7 @@ class MyCommand extends CommandTemplate {
 ### Overriding existing inferences
 
 If you want to override an existing type inference, or simply want to remove it, you can do so by calling
-``ArgumentTypeInfer#unregister(Class<?>...)``.
+``ArgumentTypeInfer#unregister(Class<?>)``.
 
 #### Example
 
