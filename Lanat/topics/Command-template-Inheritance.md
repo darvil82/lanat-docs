@@ -44,10 +44,11 @@ Lanat provides a few default command templates that you can inherit from;
 ### ``CommandTemplate.Default``
 
 Very common command template as it adds the ``help`` and ``version`` arguments to the command.
-This essentially just calls ``Command#addHelpArgument`` and ``Command#addVersionArgument`` in the ``after`` method.
+This essentially just calls ``Command#addHelpArgument`` and ``Command#addVersionArgument`` in the ``afterInit`` method.
 
-Since these arguments are added **only** in the ``afterInit`` method, they can not be accessed directly in the instance
-of the class.
+> Since these arguments are added **only** in the ``afterInit`` method, they can not be accessed directly in the instance
+> of the class.
+> {style="note"}
 
 ### ``CommandTemplate.Default.WithVerbose``
 
