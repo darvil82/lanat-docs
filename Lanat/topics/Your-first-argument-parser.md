@@ -58,7 +58,7 @@ public enum Operation {
 
 ## Defining the Command template
 
-Now let's create a Command template, which will define the structure of our command.
+Now let's create a [Command template](Command-Templates.md), which will define the structure of our command.
 
 ````Java
 @Command.Define
@@ -120,14 +120,15 @@ Why does this occur?
 Well, this issue is being caused by the ``op`` argument. The ``op`` argument is an enum, and enums
 cannot be automatically inferred by Lanat. We need to define the type of the argument manually.
 
-Lanat can infer the type of many different types of arguments, including primitive types, boxed
+[Lanat can infer](Type-inference.md) the type of many different types of arguments, including primitive types, boxed
 primitive types, and even some classes. Enums cannot be inferred as they are more complex types.
 
 
 ## Fixing the issue
 
 In order to fix this issue, let's head back to the ``MyProgram`` class and define the type of the
-``op`` argument. In order to do this, we will define the ``beforeInit`` static method.
+``op`` argument. In order to do this, we will define the
+[``beforeInit``](Command-Templates.md#the-beforeinit-method) static method.
 
 ````Java
 @InitDef
@@ -154,9 +155,7 @@ Running the program now will result in the following output:
 
 ## Conclusion
 
-That's it! You've just created your first argument parser with Lanat. You can now go ahead and
-experiment with the different features of Lanat.
-
+That's it! You've just created your first argument parser with Lanat.
 We've just scratched the surface of what Lanat can do. You can learn more about Lanat by reading
 the rest of the documentation. Have fun!
 
