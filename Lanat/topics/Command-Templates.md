@@ -60,6 +60,18 @@ specify the name of the group. If the group does not exist, it will be created.
 
 Multiple arguments can be placed in the same group by specifying the same name for the group.
 
+```Java
+// adding both arguments to the same group
+@Command.Define
+class MyCommand extends CommandTemplate {
+	@Argument.Define(group = "stuff")
+	public String arg1;
+	
+	@Argument.Define(group = "stuff")
+	public String arg2;
+}
+```
+
 
 
 ## The ``@InitDef`` methods
