@@ -1,4 +1,4 @@
-# Argument Options
+# Options
 
 Arguments have plenty of options to customize their behavior. All of these options can be set in either an
 `Argument` instance, or in the `ArgumentBuilder` when creating an argument.

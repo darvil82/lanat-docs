@@ -101,3 +101,52 @@ public T[] parseValues(@NotNull String @NotNull... values) {
 
 > You can technically use a subtype without registering it, but it is recommended to do so. When a subtype is registered,
 > any errors added by the subtype will be automatically dispatched to the parent argument type.
+
+
+## Name
+
+A short and descriptive name for the argument type. By default, the name is taken from the class name, without the
+`ArgumentType` suffix.
+
+```Java
+@Override
+public @NotNull String getName() {
+	return "url";
+}
+```
+
+
+## Representation
+
+The representation is a formatted string that visually represents how the argument type behaves in a simple and concise way.
+By default, the representation is just the name of the argument type.
+
+```Java
+@Override
+public @NotNull TextFormatter getRepresentation() {
+	return TextFormatter.of("url/pointing/to.something", SimpleColor.BRIGHT_MAGENTA)
+		.addFormat(FormatOption.BOLD);
+}
+```
+
+> Use the ``TextFormatter`` utility class to (optionally) add color, formatting, and more to the representation.
+> {style="note"}
+
+
+## Description
+
+A detailed description of the argument type. This may appear in the help message when the user requests help for a command.
+
+```Java
+@Override
+public @NotNull String getDescription() {
+	return "A valid URL path pointing to a resource.";
+}
+```
+
+[//]: # (TODO: add a link to description tags in the description section below)
+
+> By default, defined argument type descriptions do not appear for the argument in the help message. This is because
+> the argument itself also has its own description. If you want to show the argument type description, you can do so
+> by using the ``desc`` description tag in the argument's description.
+> {style="note"}
