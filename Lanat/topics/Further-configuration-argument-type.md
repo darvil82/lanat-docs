@@ -3,14 +3,14 @@
 As previously mentioned, argument types can not just receive a single value. When creating a new argument type,
 you can specify how many values it can receive, how many times it can be used, and more.
 
-## Required Arg value count
+## Value count bounds
 
 Specify how many values the argument type should receive.
-This is done by overriding the `getRequiredArgValueCount` method.
+This is done by overriding the `getValueCountBounds` method.
 
 ```Java
 @Override
-public @NotNull Range getRequiredArgValueCount() {
+public @NotNull Range getValueCountBounds() {
 	return Range.from(2).to(10);
 }
 ```
@@ -20,13 +20,13 @@ In this example, the argument type will require the user to provide at least 2 v
 This will impact the number of values that the argument type can receive when its `parseValues` method is called.
 
 
-## Required Usage count
+## Usage count bounds
 
-Specify how many times the argument type should be used.
+Specify how many times the argument type should be used. This is done by overriding the `getUsageCountBounds` method.
 
 ```Java
 @Override
-public @NotNull Range getRequiredUsageCount() {
+public @NotNull Range getUsageCountBounds() {
 	return Range.AT_LEAST_ONE;
 }
 ```
