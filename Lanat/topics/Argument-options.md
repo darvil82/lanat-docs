@@ -4,6 +4,19 @@ Arguments have plenty of options to customize their behavior. All of these optio
 `Argument` instance, or in the `ArgumentBuilder` when creating an argument.
 
 
+## Names
+
+The name or names (aka aliases) that the argument can be referred to by.
+Single character names can be used in argument name lists (e.g. ``-abc``), each alphabetic
+character being an argument name, that is, ``-a`` ``-b`` ``-c``.
+
+
+## Type
+
+An [argument type](Argument-Types.md) that will be used to parse the user input into a value for this argument.
+
+
+
 ## Default value
 
 Sets a value to use when the user does not provide one.
@@ -64,6 +77,19 @@ myCommand --number 123
 
 
 
+## Unique
+
+Specifies that this argument has priority over other arguments, even if they are required. This means that if an
+argument in a command is set as required, but one argument with unique was used, then the unused required argument
+will not throw an error.
+
+> Note that if a unique argument is used, no other argument will be allowed to be used.
+
+As an example, arguments like `--help` or `--version` are usually marked as unique, since they are expected to be used
+alone and not with other arguments. It also doesn't matter if some other required arguments are not provided.
+
+
+
 ## Prefix
 
 The prefix is the character that precedes the argument's name in the command line input. It must be a value defined in
@@ -87,3 +113,35 @@ myCommand /number 123
 > value which will automatically determine the prefix based on the operating system (e.g. `-` for Unix-like systems and
 > `/` for Windows). This is the default value.
 > {style="note"}
+
+
+
+## Hidden
+
+Hides the argument from any part of the help message.
+
+
+
+## Description
+
+A description of the argument. This is used in the help message to describe what the argument does.
+
+<tip id="description-tags">
+
+Descriptions can contain especial formatting if using [description tags](Description-tags.md). These can be used to
+create richer help messages.
+
+</tip>
+
+
+
+## Representation Color
+
+The color of the argument's representation in the help message. This is used to visually differentiate the argument from
+others. The value is a ``Color``. Both ``TrueColor`` and ``SimpleColor`` are available from the terminal text formatter
+library.
+
+```Java
+Argument.create(new IntegerArgumentType(), "number")
+	.representationColor(TrueColor.of(0xeffd12));
+```

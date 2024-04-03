@@ -9,7 +9,7 @@ type-safe and less verbose way.
 To define a command, you need to create a new class that extends ``CommandTemplate`` and annotate it with
 ``@Command.Define``.
 
-See more about defining a command [here](Commands.md#define-a-command-template).
+[Read more about defining a command](Commands.md#define-a-command-template).
 
 
 ## The `@Command.Define` annotation
@@ -34,7 +34,7 @@ class MyCommand extends CommandTemplate { }
 To define an argument, you need to add a property to the command template class and annotate it with
 ``@Argument.Define``.
 
-See more about defining arguments [here](Arguments.md#defining-arguments).
+[Read more about defining arguments](Arguments.md#defining-arguments).
 
 The annotation allows to specify most of the properties of the argument, such as the ``names()``,
 ``description()``, ``type()``, etc.
