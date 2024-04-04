@@ -116,9 +116,9 @@ myCommand /number 123
 
 
 
-## Hidden
+## Visible
 
-Hides the argument from any part of the help message.
+Makes the argument visible or hidden in the help message. By default, arguments are visible.
 
 
 
