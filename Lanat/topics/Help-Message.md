@@ -60,6 +60,7 @@ protected void initLayout() {
 			.withMarginTop(1),
 		LayoutItem.of(LayoutGenerators::programDetails)
 			.withTitle("Program Details:")
+			.withIndent(1)
 			.withMarginTop(2)
 	);
 }
