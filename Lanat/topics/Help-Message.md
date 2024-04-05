@@ -68,6 +68,8 @@ protected void initLayout() {
 As you can see, defining layout items is as simple as creating a new instance of ``LayoutItem`` and passing a generator
 to it. You can also set the title, indent, and margin for each layout item.
 
+> ``HelpFormatter`` contains plenty of utility methods to remove, move, add, and replace layout items.
+> {style="note"}
 
 ## Layout Items
 
@@ -76,7 +78,7 @@ layout item that shows the number of arguments in a command:
 
 ```Java
 cmd.getHelpFormatter().addLayoutItems(
-	LayoutItem.of(c -> String.valueOf(c.getArguments().size()))
+	LayoutItem.of(c -> c.getArguments().size() + " args")
 		.withTitle("Number of arguments:")
 		.withIndent(1)
 );
@@ -88,7 +90,7 @@ displayed when we call ``cmd.getHelp()`` (excluding the rest of the help message
 ```
 Number of arguments:
 
-   5
+   5 args
 ```
 
 > Notice how the number of arguments is displayed with an indentation of 1. The size of each indentation is determined by the

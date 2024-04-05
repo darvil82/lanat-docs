@@ -148,6 +148,10 @@ class MyCommand extends CommandTemplate {
 }
 ```
 
+> The type of the parameter can be of any subclass of ``Command``. Use this to alter the specific values an
+> `ArgumentParser` instance (the root command) has, such as `setDetails` or `setVersion`.
+> {style="note"}
+
 
 ## The ``@CommandAccessor`` annotation
 

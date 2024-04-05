@@ -13,7 +13,8 @@ These three are all different commands, but they do belong to the same parent co
 Let's take a look at how we can define sub-commands in Lanat.
 
 
-## Sub-Commands in Command Templates { switcher-key="Templates" }
+<chapter switcher-key="Templates">
+<title>Defining Sub-Commands</title>
 
 Simply add a new nested command template class to your command template class:
 
@@ -45,8 +46,11 @@ class MyCommand extends CommandTemplate {
 }
 ````
 
+</chapter>
 
-## Defining Sub-Commands Imperatively { switcher-key="Traditional" }
+
+<chapter switcher-key="Traditional">
+<title>Defining Sub-Commands</title>
 
 You can add sub-commands to a command by using the ``Command#addCommand`` method:
 
@@ -58,6 +62,13 @@ var myCommand = new ArgumentParser("MyCommand") {{
 	}});
 }};
 ````
+
+</chapter>
+
+> The root command instance shall always be of type ``ArgumentParser``, which contains a few more options
+> specific to the root command.
+> {style="note"}
+
 
 
 ## Using Sub-Commands
