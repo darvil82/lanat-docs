@@ -35,6 +35,8 @@ cmd.getHelpFormatter().generate(cmd) + System.lineSeparator();
 The reference of the command passed to the ``generate`` method is what is used to display all the information about the
 command and its arguments.
 
+> The main idea of the generators taking a command as an argument is to allow them to work for any command.
+
 
 ## Help Formatter
 
