@@ -54,5 +54,5 @@ type
 
 1. Select the [type](Argument-Types.md) of the argument `myArg1` of the current command: ``args.myArg1.type``
 2. Select the Sub-Command ``myCmd`` of the current command: ``cmds.myCmd``
-3. Select the type of the argument ``myArg1`` of the Sub-Command `myCmd` in the current command: ``cmds.myCmd.args.myArg1.type``
+3. Select the [type](Argument-Types.md) of the argument ``myArg1`` of the Sub-Command `myCmd` in the current command: ``cmds.myCmd.args.myArg1.type``
 4. Select the [type](Argument-Types.md) of the argument that is requesting to parse this description by using the `!` prefix: `!.type`
