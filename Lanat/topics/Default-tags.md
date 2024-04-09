@@ -6,7 +6,25 @@ Lanat provides a few tags that are ready to be used in descriptions:
 <deflist>
 
 <def title="link">
+
 Gets the representation of the target object specified by the route.
+
+Example:
+
+```Java
+@Command.Define(
+  description = "This is a link to the argument: <link=args.name>"
+)
+class MyCommand extends CommandTemplate {
+    @Argument.Define(required = true, positional = true)
+    public String name;
+}
+```
+
+Shows as:
+
+![Representation of the example](tags-repr1.png)
+
 </def>
 
 <def title="desc" id="desc">
@@ -17,6 +35,27 @@ mind that it is still possible to infinitely recurse by implicitly targeting the
 argument show the description of another argument, which in turn shows the description of the first argument too.
 This would eventually cause a ``StackOverflowError``.
 > {style="warning"}
+
+Example:
+
+```Java
+@Command.Define(
+  description = "This is a link to the argument: <link=args.name>"
+)
+class MyCommand extends CommandTemplate {
+    @Argument.Define(
+      required = true, positional = true,
+      description = "Description of the command: <desc>"
+    )
+    public String name;
+}
+```
+
+Shows as:
+
+![Representation of the example](tags-repr2.png)
+
+
 </def>
 
 <def title="color">
@@ -46,11 +85,24 @@ follow the syntax ``color_name|#rrggbb|r,g,b``.
   * dark cyan
   * dark white
 
+Example:
+
+```Java
+"<color=red>This is red text, <color=#00ff7e:black>and this is green text on a black background."
+```
+
+Which shows as:
+
+![Representation of the example](tags-repr3.png)
+
 </def>
 
 <def title="format">
 
 Changes the format of the text. (e.g. `<format=bold>`). The format value is case-insensitive.
+
+The syntax for specifying formats is `format[,format,...]` where `format` is `[!]format_name`.
+`!` is used to reset the format of that kind.
 
 The values that may be used are:
 * reset
@@ -63,10 +115,15 @@ The values that may be used are:
 * reverse
 * hidden
 
-> The tag can receive multiple format values, separated by commas. (e.g. `<format=bold,italic>`).
-If the format value is preceded by an exclamation mark, the format of that kind will be reset. (e.g. `<format=!bold>`).
-Both can be used together. For example, in `<format=bold,!italic>`), the text will be bold and the italic format will be reset.
-> {style="note"}
+Example:
+
+```Java
+"<format=bold,italic>This is bold and italic text, <format=!italic>and this is just bold text. <format=reset>And this is normal text."
+```
+
+Which shows as:
+
+![Representation of the example](tags-repr4.png)
 
 </def>
 
