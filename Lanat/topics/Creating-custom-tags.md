@@ -3,9 +3,6 @@
 Lanat allows you to create custom tags to use in descriptions. A tag is basically just a parser that returns a string
 based on the value given to it.
 
-
-## Example
-
 Let's create a simple tag that all that does is return a string with the name of the user and a message if given.
 
 <procedure title="Tutorial">
@@ -23,6 +20,9 @@ public class MyTag extends Tag {
 	}
 }
 ```
+
+The ``value`` parameter is the value given to the tag in the description after the `=` sign.
+If no value is given, it will be ``null``.
 
 </step>
 
