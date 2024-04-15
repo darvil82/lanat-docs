@@ -52,6 +52,13 @@ If no type is provided, Lanat will attempt to infer the argument type from the t
 assigned to. For example, if the property is of type ``int``, Lanat will use the ``IntegerArgumentType`` as the type of
 the argument. See more about argument type inference [here](Type-inference.md).
 
+> You can wrap the field type in an ``Optional``. When gathering the parsed values, if the argument does not provide a
+> value, the field will be set to ``Optional.empty()`` instead of ``null``.
+> 
+> Note that it is not possible for Lanat to know the type parameter of the ``Optional``. You will have to specify the
+> type of the argument manually.
+> {style="note"}
+
 
 ### Setting a ``group()``
 

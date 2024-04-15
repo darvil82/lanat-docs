@@ -55,6 +55,9 @@ class MyCommand extends CommandTemplate {
 }
 ```
 
+> It is not allowed to create inferences for the ``Optional`` type.
+> {style="warning"}
+
 
 ### Overriding existing inferences
 
