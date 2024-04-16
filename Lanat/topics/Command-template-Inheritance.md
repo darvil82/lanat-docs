@@ -1,7 +1,7 @@
 # Command Template Inheritance
 
 As previously mentioned, a command template must always inherit from `CommandTemplate`. However, it must be noted that
-a class can inherit from any other class as long as in the end of the inheritance chain there is a class that extends
+a template class can inherit from any other class as long as in the end of the inheritance chain there is a class that extends
 `CommandTemplate`. This can be useful for creating more "generic" command templates that **can be used as a base** for other
 command templates.
 

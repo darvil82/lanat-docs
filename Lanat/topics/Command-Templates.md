@@ -182,7 +182,7 @@ Once ``SubCommand`` is instantiated by Lanat, it will be automatically assigned 
 ``MyCommand`` upon instantiation. This will later allow you to access the inner command's properties.
 
 > If there is a sub-command template class defined inside another template class, but there's no property annotated
-> with ``@CommandAccessor`` in the outer class, a ``CommandTemplateException`` will be thrown.
+> with ``@CommandAccessor`` in the outer class, a ``CommandTemplateException`` will be thrown when it is instantiated.
 > {style="warning"}
 
 
