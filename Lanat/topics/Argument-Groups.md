@@ -124,7 +124,7 @@ public static void afterInit(Command cmd) {
 
 ### Example
 
-Given the following group tree:
+Given the following group tree **(lime colored groups are restrictive)**:
 
 ![Group hierarchy](groups_diagram.png)
 
