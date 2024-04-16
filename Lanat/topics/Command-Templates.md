@@ -107,7 +107,7 @@ exactly what we need for the example mentioned above.
 ```Java
 @InitDef
 public static void beforeInit(CommandBuildContext ctx) {
-	ctx.argWithType("especial", new MyArgumentType(5, "Hello"));
+	ctx.argWithType("arg1", new MyArgumentType(5, "Hello"));
 }
 ```
 
@@ -132,8 +132,8 @@ At this point it is possible to do things such as creating a [group](Argument-Gr
 @InitDef
 public static void afterInit(Command cmd) {
 	cmd.addGroup(new Group("stuff") {{
-		addArgument(cmd.getArgument("especial"));
-		addArgument(cmd.getArgument("another"));
+		addArgument(cmd.getArgument("arg1"));
+		addArgument(cmd.getArgument("arg2"));
 		setRestricted(true);
 	}});
 }
@@ -146,10 +146,10 @@ the ``@Argument.Define`` annotation:
 @Command.Define
 class MyCommand extends CommandTemplate {
 	@Argument.Define(group = "stuff")
-	public String especial;
+	public String arg1;
 
 	@Argument.Define(group = "stuff")
-	public String another;
+	public String arg2;
 	
 	@InitDef
 	public static void afterInit(Command cmd) {

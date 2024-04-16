@@ -20,8 +20,8 @@ Wrap the arguments you want to group in an ``Group``:
 ````Java
 var cmd = new ArgumentParser("MyProgram") {{
 	addGroup(new Group("stuff") {{
-		addArgument(Argument.create(new StringArgumentType(), "especial"));
-		addArgument(Argument.create(new StringArgumentType(), "another"));
+		addArgument(Argument.create(new StringArgumentType(), "arg1"));
+		addArgument(Argument.create(new StringArgumentType(), "arg2"));
 	}});
 }}
 ````
@@ -35,8 +35,8 @@ allowed:
 var cmd = new ArgumentParser("MyProgram") {{
 	var group = new Group("stuff");
 	addGroup(group);
-	group.addArgument(Argument.create(new StringArgumentType(), "especial"));
-	group.addArgument(Argument.create(new StringArgumentType(), "another"));
+	group.addArgument(Argument.create(new StringArgumentType(), "arg1"));
+	group.addArgument(Argument.create(new StringArgumentType(), "arg2"));
 }}
 ````
 
@@ -64,11 +64,11 @@ Just like [commands](Commands.md), groups can be nested inside other groups. Thi
 ````Java
 var cmd = new ArgumentParser("MyProgram") {{
 	addGroup(new Group("stuff") {{
-		addArgument(Argument.create(new StringArgumentType(), "especial"));
-		addArgument(Argument.create(new StringArgumentType(), "another"));
+		addArgument(Argument.create(new StringArgumentType(), "arg1"));
+		addArgument(Argument.create(new StringArgumentType(), "arg2"));
 		
 		addGroup(new Group("more-stuff") {{
-			addArgument(Argument.create(new StringArgumentType(), "yet-another"));
+			addArgument(Argument.create(new StringArgumentType(), "another"));
 		}});
 	}});
 }}
@@ -106,8 +106,8 @@ To make a group restrictive, set the ``restricted`` property of the group to ``t
 var cmd = new ArgumentParser("MyProgram") {{
 	addGroup(new Group("stuff") {{
 		setRestricted(true);
-		addArgument(Argument.create(new StringArgumentType(), "especial"));
-		addArgument(Argument.create(new StringArgumentType(), "another"));
+		addArgument(Argument.create(new StringArgumentType(), "arg1"));
+		addArgument(Argument.create(new StringArgumentType(), "arg2"));
 	}});
 }}
 ````
