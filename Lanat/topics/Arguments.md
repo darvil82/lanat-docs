@@ -43,8 +43,15 @@ var myCommand = new ArgumentParser("MyCommand") {{
 Lanat will create an argument called `number` which will have an ``IntegerArgumentType``
 as its type. This means that the user will have to provide a valid integer value as input for this argument.
 
-In this case, the argument instance created by Lanat will have a type of ``IntegerArgumentType``, but, we never had
-explicitly specified that. Lanat can infer the type of the argument from the type of the property that it is assigned to.
+Notice how we never had to explicitly specify the type of the argument.
+Lanat can [infer the type](Type-inference.md) of the argument from the type of the property that it is assigned to.
 {switcher-key="Templates"}
 
 We'll take a deeper look at argument types later on.
+
+
+<seealso>
+	<category ref="related">
+		<a href="Argument-Types.md">Argument Types</a>
+	</category>
+</seealso>

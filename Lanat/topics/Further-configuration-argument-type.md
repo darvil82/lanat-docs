@@ -144,8 +144,6 @@ public @NotNull String getDescription() {
 }
 ```
 
-<include from="Argument-options.md" element-id="description-tags"/>
-
 > By default, defined argument type descriptions do not appear for the argument in the help message. This is because
 > the argument itself also has its own description. If you want to show the argument type description, you can do so
 > by using the [``desc``](Default-tags.md#desc) [description tag](Description-tags.md) in the argument's description.
