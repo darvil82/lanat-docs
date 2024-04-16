@@ -74,6 +74,7 @@ to it. You can also set the title, indent, and margin for each layout item.
 > ``HelpFormatter`` contains plenty of utility methods to remove, move, add, and replace layout items.
 > {style="note"}
 
+
 ## Layout Items
 
 A layout item is basically just a function that receives a command and returns a string. Here's an example of a simple
@@ -103,3 +104,8 @@ Number of arguments:
 
 The function specified doesn't explicitly need to comply with ``Function<Command, String>``.
 It can also be a ``Supplier<String>`` or just a `String`.
+
+
+### Default generators
+
+The generators that are used in the default layout items are located in the ``LayoutGenerators`` class.

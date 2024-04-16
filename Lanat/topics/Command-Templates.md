@@ -67,18 +67,20 @@ specify the name of the group. If the group does not exist, it will be created.
 
 Multiple arguments can be placed in the same group by specifying the same name for the group.
 
-```Java
+
+<code-block lang="java" id="define-annotation_group">
+<![CDATA[
 // adding both arguments to the same group
 @Command.Define
 class MyCommand extends CommandTemplate {
 	@Argument.Define(group = "stuff")
 	public String arg1;
-	
+
 	@Argument.Define(group = "stuff")
 	public String arg2;
 }
-```
-
+]]>
+</code-block>
 
 
 ## The ``@InitDef`` methods
@@ -129,7 +131,7 @@ At this point it is possible to do things such as creating a [group](Argument-Gr
 ```Java
 @InitDef
 public static void afterInit(Command cmd) {
-	cmd.addGroup(new ArgumentGroup("stuff") {{
+	cmd.addGroup(new Group("stuff") {{
 		addArgument(cmd.getArgument("especial"));
 		addArgument(cmd.getArgument("another"));
 		setRestricted(true);
