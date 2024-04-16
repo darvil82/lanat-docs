@@ -13,8 +13,7 @@ These three are all different commands, but they do belong to the same parent co
 Let's take a look at how we can define sub-commands in Lanat.
 
 
-<chapter switcher-key="Templates">
-<title>Defining Sub-Commands</title>
+<chapter switcher-key="Templates" title="Defining Sub-Commands">
 
 Simply add a new nested command template class to your command template class:
 
@@ -49,8 +48,7 @@ class MyCommand extends CommandTemplate {
 </chapter>
 
 
-<chapter switcher-key="Traditional">
-<title>Defining Sub-Commands</title>
+<chapter switcher-key="Traditional" title="Defining Sub-Commands">
 
 You can add sub-commands to a command by using the ``Command#addCommand`` method:
 

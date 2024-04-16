@@ -10,6 +10,8 @@ structured way so that the user can understand the purpose of each argument bett
 Groups are mostly useful for the help message generation, where they can be seen visually affecting the representation of
 how arguments are displayed.
 
+![Group help representation](groups.png)
+
 
 <chapter title="Creating a group and adding Arguments" switcher-key="Traditional">
 
@@ -57,7 +59,7 @@ the group that an argument belongs to.
 
 ## Group hierarchy
 
-Groups can be nested inside other groups. This allows you to create a hierarchy of groups:
+Just like [commands](Commands.md), groups can be nested inside other groups. This allows you to create a hierarchy of groups:
 
 ````Java
 var cmd = new ArgumentParser("MyProgram") {{
@@ -66,7 +68,7 @@ var cmd = new ArgumentParser("MyProgram") {{
 		addArgument(Argument.create(new StringArgumentType(), "another"));
 		
 		addGroup(new Group("more-stuff") {{
-			addArgument(Argument.create(new StringArgumentType(), "yet another"));
+			addArgument(Argument.create(new StringArgumentType(), "yet-another"));
 		}});
 	}});
 }}
@@ -103,9 +105,9 @@ To make a group restrictive, set the ``restricted`` property of the group to ``t
 ````Java
 var cmd = new ArgumentParser("MyProgram") {{
 	addGroup(new Group("stuff") {{
+		setRestricted(true);
 		addArgument(Argument.create(new StringArgumentType(), "especial"));
 		addArgument(Argument.create(new StringArgumentType(), "another"));
-		setRestricted(true);
 	}});
 }}
 ````
