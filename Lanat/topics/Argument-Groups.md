@@ -10,7 +10,7 @@ structured way so that the user can understand the purpose of each argument bett
 Groups are mostly useful for the help message generation, where they can be seen visually affecting the representation of
 how arguments are displayed.
 
-![Group help representation](groups.png)
+![Group help representation](groups_help.png)
 
 
 <chapter title="Creating a group and adding Arguments" switcher-key="Traditional">
@@ -120,3 +120,16 @@ public static void afterInit(Command cmd) {
 }
 ```
 {switcher-key="Templates"}
+
+
+### Example
+
+Given the following group tree:
+
+![Group hierarchy](groups_diagram.png)
+
+* If `Argument 1` is used, then none of the arguments in the child groups can be used, because `Group 1` is restricted.
+* If `Argument 3.1` is used, then none of the arguments in the rest of the tree can be used, because both
+  `Group 3` and its parent `Group 1` are restricted.
+* If `Argument 2.1` is used, `Argument 2.2` can still be used, because `Group 2` is not restricted. No other arguments
+  in the tree can be used though.
