@@ -3,7 +3,9 @@
 As previously mentioned, argument types can not just receive a single value. When creating a new argument type,
 you can specify how many values it can receive, how many times it can be used, and more.
 
-## Value count bounds
+<deflist>
+
+<def title="Value count bounds">
 
 Specify how many values the argument type should receive.
 This is done by overriding the `getValueCountBounds` method.
@@ -19,8 +21,10 @@ In this example, the argument type will require the user to provide at least 2 v
 
 This will impact the number of values that the argument type can receive when its `parseValues` method is called.
 
+</def>
 
-## Usage count bounds
+
+<def title="Usage count bounds">
 
 Specify how many times the argument type should be used. This is done by overriding the `getUsageCountBounds` method.
 
@@ -39,8 +43,10 @@ In this example, the argument type will require the user to use it at least once
 This will impact the number of times the `parseValues` method will be called. For each time the argument type is used,
 the `parseValues` method will be called once with the values provided by the user.
 
+</def>
 
-## Initial Value
+
+<def title="Initial Value">
 
 When an argument type invokes the `super` constructor, it may provide an initial value for the argument type.
 
@@ -58,6 +64,63 @@ For instance, the `CounterArgumentType` always returns a value. If the user neve
 initial value, which is `0`.
 
 > The initial value can be retrieved at any time by calling the `getInitialValue` method.
+
+</def>
+
+
+<def title="Name">
+
+A short and descriptive name for the argument type. By default, the name is taken from the class name, without the
+`ArgumentType` suffix.
+
+```Java
+@Override
+public @NotNull String getName() {
+	return "url";
+}
+```
+
+</def>
+
+
+<def title="Representation">
+
+The representation is a formatted string that visually represents how the argument type behaves in a simple and concise way.
+By default, the representation is just the name of the argument type.
+
+```Java
+@Override
+public @NotNull TextFormatter getRepresentation() {
+	return TextFormatter.of("url/pointing/to.something", SimpleColor.BRIGHT_MAGENTA)
+		.addFormat(FormatOption.BOLD);
+}
+```
+
+> Use the ``TextFormatter`` utility class to (optionally) add color, formatting, and more to the representation.
+> {style="note"}
+
+</def>
+
+
+<def title="Description">
+
+A detailed description of the argument type. This may appear in the help message when the user requests help for a command.
+
+```Java
+@Override
+public @NotNull String getDescription() {
+	return "A valid URL path pointing to a resource.";
+}
+```
+
+> By default, defined argument type descriptions do not appear for the argument in the help message. This is because
+> the argument itself also has its own description. If you want to show the argument type description, you can do so
+> by using the [``desc``](Default-tags.md#desc) [description tag](Description-tags.md) in the argument's description.
+> {style="note"}
+
+</def>
+
+</deflist>
 
 
 ## Registering an argument subtype
@@ -101,50 +164,3 @@ public T[] parseValues(@NotNull String @NotNull... values) {
 
 > You can technically use a subtype without registering it, but it is recommended to do so. When a subtype is registered,
 > any errors added by the subtype will be automatically dispatched to the parent argument type.
-
-
-## Name
-
-A short and descriptive name for the argument type. By default, the name is taken from the class name, without the
-`ArgumentType` suffix.
-
-```Java
-@Override
-public @NotNull String getName() {
-	return "url";
-}
-```
-
-
-## Representation
-
-The representation is a formatted string that visually represents how the argument type behaves in a simple and concise way.
-By default, the representation is just the name of the argument type.
-
-```Java
-@Override
-public @NotNull TextFormatter getRepresentation() {
-	return TextFormatter.of("url/pointing/to.something", SimpleColor.BRIGHT_MAGENTA)
-		.addFormat(FormatOption.BOLD);
-}
-```
-
-> Use the ``TextFormatter`` utility class to (optionally) add color, formatting, and more to the representation.
-> {style="note"}
-
-
-## Description
-
-A detailed description of the argument type. This may appear in the help message when the user requests help for a command.
-
-```Java
-@Override
-public @NotNull String getDescription() {
-	return "A valid URL path pointing to a resource.";
-}
-```
-
-> By default, defined argument type descriptions do not appear for the argument in the help message. This is because
-> the argument itself also has its own description. If you want to show the argument type description, you can do so
-> by using the [``desc``](Default-tags.md#desc) [description tag](Description-tags.md) in the argument's description.
-> {style="note"}
