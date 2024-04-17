@@ -11,7 +11,7 @@ provides a way to parse user input into a specific type.
 ```Java
 class URLArgumentType extends ArgumentType<URL> {
 	@Override
-	public @Nullable URL parseValues(@NotNull String[] args) {
+	public URL parseValues(String[] args) {
 		try {
 			return URI.create(args[0]).toURL();
 		} catch (Exception e) {
@@ -83,7 +83,7 @@ this interface have default implementations, so you only need to implement the `
 ```Java
 class URLArgumentType implements Parseable<URL> {
 	@Override
-	public @Nullable URL parseValues(@NotNull String[] args) {
+	public URL parseValues(String[] args) {
 		try {
 			return URI.create(args[0]).toURL();
 		} catch (Exception e) {

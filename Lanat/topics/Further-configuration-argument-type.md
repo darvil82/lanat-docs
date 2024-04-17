@@ -12,7 +12,7 @@ This is done by overriding the `getValueCountBounds` method.
 
 ```Java
 @Override
-public @NotNull Range getValueCountBounds() {
+public Range getValueCountBounds() {
 	return Range.from(2).to(10);
 }
 ```
@@ -30,7 +30,7 @@ Specify how many times the argument type should be used. This is done by overrid
 
 ```Java
 @Override
-public @NotNull Range getUsageCountBounds() {
+public Range getUsageCountBounds() {
 	return Range.AT_LEAST_ONE;
 }
 ```
@@ -75,7 +75,7 @@ A short and descriptive name for the argument type. By default, the name is take
 
 ```Java
 @Override
-public @NotNull String getName() {
+public String getName() {
 	return "url";
 }
 ```
@@ -90,7 +90,7 @@ By default, the representation is just the name of the argument type.
 
 ```Java
 @Override
-public @NotNull TextFormatter getRepresentation() {
+public TextFormatter getRepresentation() {
 	return TextFormatter.of("url/pointing/to.something", SimpleColor.BRIGHT_MAGENTA)
 		.addFormat(FormatOption.BOLD);
 }
@@ -108,7 +108,7 @@ A detailed description of the argument type. This may appear in the help message
 
 ```Java
 @Override
-public @NotNull String getDescription() {
+public String getDescription() {
 	return "A valid URL path pointing to a resource.";
 }
 ```
@@ -132,10 +132,10 @@ Let's look at the implementation of `TupleArgumentType`:
 
 ```Java
 public class TupleArgumentType<T> extends ArgumentType<T[]> {
-	private final @NotNull Range valueCount;
-	private final @NotNull ArgumentType<T> argumentType;
+	private final Range valueCount;
+	private final ArgumentType<T> argumentType;
 
-	public TupleArgumentType(@NotNull Range valueCount, @NotNull ArgumentType<T> argumentType) {
+	public TupleArgumentType(Range valueCount, ArgumentType<T> argumentType) {
 		this.valueCount = valueCount;
 		this.registerSubType(this.argumentType = argumentType);
 	}
@@ -151,7 +151,7 @@ This is how the `parseValues` method is implemented (simplified):
 
 ```Java
 @Override
-public T[] parseValues(@NotNull String @NotNull... values) {
+public T[] parseValues(String[] values) {
 	var result = new Object[values.length];
 
 	for (int i = 0; i < values.length; i++) {
