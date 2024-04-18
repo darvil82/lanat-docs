@@ -15,6 +15,7 @@
         <toc-element topic="Sub-Commands.md"/>
         <toc-element topic="Command-Templates.md">
             <toc-element topic="Command-template-Inheritance.md"/>
+            <toc-element topic="Advanced-creation-of-Commands.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="Arguments.md">
@@ -28,6 +29,7 @@
         </toc-element>
     </toc-element>
     <toc-element topic="Argument-Groups.md"/>
+    <toc-element topic="Receiving-the-values.md"/>
     <toc-element topic="Help-Message.md">
         <toc-element topic="Description-tags.md">
             <toc-element topic="Default-tags.md"/>

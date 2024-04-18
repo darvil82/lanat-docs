@@ -98,77 +98,7 @@ At this point, ``myCommand`` is now an actual command instance which can be used
 Let's take a look at how to do that.
 
 
-## Using the command
-
-Now that we have defined a command, we can use it to parse input from the user.
-
-
-### Use the template { switcher-key="Templates" }
-
-Lanat provides a utility method in ``ArgumentParser`` which allows you to construct a command instance from a command
-template class.
-
-```Java
-void main(String[] args) {
-	MyCommand input = ArgumentParser.parseFromInto(MyCommand.class, args);
-}
-```
-
-Note how ``input`` is now an instance of ``MyCommand``. This means that you can access the values the arguments have
-received from the user by naturally accessing the properties of the class.
-
-```Java
-...
-System.out.println("Hello, " + input.userName + "!");
-```
-
-This provides a type-safe way of accessing the arguments, as you already have the type of the argument in the property
-type.
-
-
-### Parse the input { switcher-key="Traditional" }
-
-In order to parse the input from the user, you can use the ``parse`` method of the ``ArgumentParser`` instance
-you just made.
-
-```Java
-void main(String[] args) {
-	var myCommand = new ArgumentParser("MyCommand");
-	myCommand.addArgument(Argument.create(new StringArgumentType(), "userName"));
-	
-	// Parse the input
-	ParseResultRoot input = myCommand.parse(CLInput.from(args)).getResult();
-}
-```
-
-For now, we will gather the input by calling ``getResult`` on the `AfterParseOptions` instance returned by the
-``parse`` method. This returns us a ``ParseResultRoot`` instance, which allows us to access the parsed values.
-
-```Java
-...
-System.out.printf("Hello, %s!%n", input.get("userName").get());
-```
-
-As we previously mentioned, this method is not type-safe. ``get`` here is returning an ``Optional`` of ``Object`` since
-at this point we don't know what the type of the argument is. Therefore, this can't work:
-
-```Java
-String userName = input.get("userName").get();
-```
-
-However, we can use the type parameter of ``get`` to prevent us from having to cast the value:
-
-```Java
-var userName = input.<String>get("userName").get();
-```
-
-> Note that this is still **not type-safe**, as you could have provided a value of a different type for the argument.
->
-> If the type differs from the one you specified, a ``ClassCastException`` will be thrown.
-{style="warning"}
-
-
-## Conclusion
+## TL;DR
 
 <tldr>
 It is recommended to use the templates method to define commands and arguments.
