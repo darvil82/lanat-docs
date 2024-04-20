@@ -6,7 +6,7 @@ switcher-label: Command creation method
 
 Once you have defined a command, you can use it to parse input from the user.
 
-After you have successfully created a command instance, call the ``parse()`` method to parse the input:
+To parse input, call the ``parse()`` method that is present on the `ArgumentParser` instance:
 
 ```Java
 void main(String[] args) {
@@ -32,6 +32,8 @@ void main(String[] args) {
 }
 ```
 {switcher-key="Traditional" collapsible="true" collapsed-title-line-number="9"}
+
+> You can read more about the `CLInput` class [here](CLInput-class.md).
 
 This will return a ``AfterParseOptions`` object, which allows you to do some post-parsing operations that can be
 useful.

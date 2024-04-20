@@ -40,3 +40,7 @@ Reads the input from the standard input. The input will be the first line read.
 </def>
 
 </deflist>
+
+> All that this class does is, in the end, provide a string that will be used to parse the input from the user. The actual
+> instance of ``CLInput`` contains the `args` field, which is the string that will be parsed.
+> {style="note"}
