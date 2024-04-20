@@ -61,7 +61,16 @@ class MyCommand extends CommandTemplate {
 We just added a new argument to our command template. This argument is called `userName` and it's type is
 ``StringArgumentType``. This means that the user will have to provide a string as input for this argument.
 
-We'll now take a look at how to use this command template to create an actual command instance.
+#### Creating the command instance
+
+To parse the command line arguments, you need to create an actual command instance from the command template.
+In order to do this, you can use the ``ArgumentParser.from`` method:
+
+````Java
+var myCommand = ArgumentParser.from(MyCommand.class);
+````
+
+``myCommand`` is now an actual command instance which can be used to parse input from the user.
 
 
 ### Construct an ArgumentParser { switcher-key="Traditional" }
@@ -95,7 +104,6 @@ We will use this anonymous subclass syntax in the following sections.
 </tip>
 
 At this point, ``myCommand`` is now an actual command instance which can be used to parse input from the user.
-Let's take a look at how to do that.
 
 
 ## TL;DR
@@ -107,20 +115,3 @@ It is recommended to use the templates method to define commands and arguments.
 The traditional method used to be the only way to define commands in Lanat. However, the templates method was added
 later on to provide a more type-safe way of defining commands. In fact, the command templates system uses the traditional
 approach under the hood.
-
-<tip>
-
-Something important to mention is that while we properly defined the ``userName`` argument, we don't _properly_
-handle the case where the user doesn't provide a value for it.
-
-We print the value of ``input.userName``, but if the user doesn't provide a value for it, the value of the property
-will be ``null``. In this case, this will print ``Hello, null!``. In worse cases, this could cause a
-``NullPointerException``. We'll see how to make this better in the next sections.
-{switcher-key="Templates"}
-
-``input.get("userName")`` returns an ``Optional`` of ``Object``, then we call ``get`` on it to get the actual value.
-If the user doesn't provide a value for the argument, the ``Optional`` will be empty, and calling ``get`` on it will
-throw a ``NoSuchElementException``.
-{switcher-key="Traditional"}
-
-</tip>
