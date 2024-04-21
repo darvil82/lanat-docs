@@ -47,12 +47,12 @@ cmds
 : The sub-commands the current target contains. The next element in the route must be the name of one of these sub-commands.
 
 type
-: The [argument type](Argument-Types.md) of the current target (only available when the target is an argument).
+: The [argument type](Argument-types.md) of the current target (only available when the target is an argument).
 
 
 ## Examples
 
-1. Select the [type](Argument-Types.md) of the argument `myArg1` of the current command: ``args.myArg1.type``
+1. Select the [type](Argument-types.md) of the argument `myArg1` of the current command: ``args.myArg1.type``
 2. Select the Sub-Command ``myCmd`` of the current command: ``cmds.myCmd``
-3. Select the [type](Argument-Types.md) of the argument ``myArg1`` of the Sub-Command `myCmd` in the current command: ``cmds.myCmd.args.myArg1.type``
-4. Select the [type](Argument-Types.md) of the argument that is requesting to parse this description by using the `!` prefix: `!.type`
+3. Select the [type](Argument-types.md) of the argument ``myArg1`` of the Sub-Command `myCmd` in the current command: ``cmds.myCmd.args.myArg1.type``
+4. Select the [type](Argument-types.md) of the argument that is requesting to parse this description by using the `!` prefix: `!.type`

@@ -58,7 +58,7 @@ public enum Operation {
 
 ## Defining the Command template
 
-Now let's create a [Command template](Command-Templates.md), which will define the structure of our command.
+Now let's create a [Command template](Command-templates.md), which will define the structure of our command.
 
 ````Java
 @Command.Define
@@ -128,7 +128,7 @@ primitive types, and even some classes. Enums cannot be inferred as they are mor
 
 In order to fix this issue, let's head back to the ``MyProgram`` class and define the type of the
 ``op`` argument. In order to do this, we will define the
-[``beforeInit``](Command-Templates.md#the-beforeinit-method) static method.
+[``beforeInit``](Command-templates.md#the-beforeinit-method) static method.
 
 ````Java
 @InitDef

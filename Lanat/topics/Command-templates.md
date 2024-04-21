@@ -1,4 +1,4 @@
-# Command Templates
+# Command templates
 
 Command templates are classes that, with the help of annotations, allow you to define commands and arguments in a
 type-safe and less verbose way.
@@ -62,7 +62,7 @@ the argument. See more about argument type inference [here](Type-inference.md).
 
 ### Setting a ``group()``
 
-You can also specify a [group](Argument-Groups.md) in which this argument will be placed in. By using the ``group()`` property, you can
+You can also specify a [group](Argument-groups.md) in which this argument will be placed in. By using the ``group()`` property, you can
 specify the name of the group. If the group does not exist, it will be created.
 
 Multiple arguments can be placed in the same group by specifying the same name for the group.
@@ -126,7 +126,7 @@ As mentioned before, any property of them may be altered at this point.
 This method is called right after all the argument builders have been built into argument instances, and they have been
 added to the command instance. It receives the actual command object.
 
-At this point it is possible to do things such as creating a [group](Argument-Groups.md) and adding arguments to it. Example:
+At this point it is possible to do things such as creating a [group](Argument-groups.md) and adding arguments to it. Example:
 
 ```Java
 @InitDef
@@ -139,7 +139,7 @@ public static void afterInit(Command cmd) {
 }
 ```
 
-Note that this can be greatly simplified by using the [``group()``](Command-Templates.md#setting-a-group) property of
+Note that this can be greatly simplified by using the [``group()``](Command-templates.md#setting-a-group) property of
 the ``@Argument.Define`` annotation:
 
 ```Java
@@ -190,6 +190,6 @@ Once ``SubCommand`` is instantiated by Lanat, it will be automatically assigned 
 	<category ref="related">
 		<a href="Commands.md" anchor="define-a-command-template">How to define a Command</a>
 		<a href="Arguments.md" anchor="defining-arguments">How to define an Argument</a>
-		<a href="Argument-Types.md">Argument Types</a>
+		<a href="Argument-types.md">Argument Types</a>
 	</category>
 </seealso>

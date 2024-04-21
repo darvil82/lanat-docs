@@ -1,7 +1,7 @@
 # Type inference
 
 Lanat is able to infer argument types from other regular types. As an example, take a look at this
-[command template](Command-Templates.md):
+[command template](Command-templates.md):
 
 ```Java
 @Command.Define

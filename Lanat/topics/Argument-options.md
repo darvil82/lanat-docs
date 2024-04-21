@@ -16,7 +16,7 @@ character being an argument name, that is, ``-a`` ``-b`` ``-c``.
 
 <def title="Type">
 
-An [argument type](Argument-Types.md) that will be used to parse the user input into a value for this argument.
+An [argument type](Argument-types.md) that will be used to parse the user input into a value for this argument.
 
 </def>
 
@@ -32,7 +32,7 @@ Argument.create(new IntegerArgumentType(), "number")
 
 <tip>
 
-In [command templates](Command-Templates.md), you can also set a default value by setting the field's value:
+In [command templates](Command-templates.md), you can also set a default value by setting the field's value:
 
 ```Java
 @Command.Define

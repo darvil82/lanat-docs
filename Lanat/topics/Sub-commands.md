@@ -2,7 +2,7 @@
 switcher-label: Command creation method
 ---
 
-# Sub-Commands
+# Sub-commands
 
 Commands can contain sub-commands. This allows you to separate different logical parts of your program, which can
 have different arguments.
@@ -34,9 +34,6 @@ We need to add another property which will hold an instance of the sub-command c
 ````Java
 @Command.Define
 class MyCommand extends CommandTemplate {
-	@CommandAccessor
-	public Test subCmd;
-
 	@Command.Define
 	static class SubCommand extends CommandTemplate {
 		@Argument.Define

@@ -12,15 +12,15 @@
 
     </toc-element>
     <toc-element topic="Commands.md">
-        <toc-element topic="Sub-Commands.md"/>
-        <toc-element topic="Command-Templates.md">
-            <toc-element topic="Command-template-Inheritance.md"/>
-            <toc-element topic="Advanced-creation-of-Commands.md"/>
+        <toc-element topic="Sub-commands.md"/>
+        <toc-element topic="Command-templates.md">
+            <toc-element topic="Command-template-inheritance.md"/>
+            <toc-element topic="Advanced-creation-of-commands.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="Arguments.md">
         <toc-element topic="Argument-options.md"/>
-        <toc-element topic="Argument-Types.md">
+        <toc-element topic="Argument-types.md">
             <toc-element topic="Creating-an-argument-type.md">
                 <toc-element topic="Further-configuration-argument-type.md"/>
             </toc-element>
@@ -28,11 +28,12 @@
             <toc-element topic="Type-inference.md"/>
         </toc-element>
     </toc-element>
-    <toc-element topic="Argument-Groups.md"/>
+    <toc-element topic="Argument-groups.md"/>
     <toc-element topic="Receiving-the-values.md">
+        <toc-element topic="Instantiating-Command-Template-class.md"/>
         <toc-element topic="CLInput-class.md"/>
     </toc-element>
-    <toc-element topic="Help-Message.md">
+    <toc-element topic="Help-message.md">
         <toc-element topic="Description-tags.md">
             <toc-element topic="Default-tags.md"/>
             <toc-element topic="Element-routes.md"/>

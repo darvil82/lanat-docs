@@ -52,6 +52,6 @@ We'll take a deeper look at argument types later on.
 
 <seealso>
 	<category ref="related">
-		<a href="Argument-Types.md">Argument Types</a>
+		<a href="Argument-types.md">Argument Types</a>
 	</category>
 </seealso>

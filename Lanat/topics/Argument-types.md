@@ -1,4 +1,4 @@
-# Argument Types
+# Argument types
 
 When creating arguments, these must know what kind of value they are expecting to receive. Not only that, but they
 also have to know how to properly convert the user input into that value.

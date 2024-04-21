@@ -1,4 +1,4 @@
-# Help Message
+# Help message
 
 Lanat provides a way to automatically generate help messages for your commands. Specifying the descriptions in the
 command and its arguments is usually enough to generate a rich and helpful help message.
@@ -29,7 +29,7 @@ You can access this instance in ``cmd.getHelpFormatter()``. When help is shown f
 being called (``cmd.getHelp()``):
 
 ```Java
-cmd.getHelpFormatter().generate(cmd) + System.lineSeparator();
+cmd.getHelpFormatter().generate(cmd);
 ```
 
 The reference of the command passed to the ``generate`` method is what is used to display all the information about the

@@ -2,7 +2,7 @@
 switcher-label: Command creation method
 ---
 
-# Argument Groups
+# Argument groups
 
 [Commands](Commands.md) can contain argument groups. Groups allow you to organize the arguments in the command in a more
 structured way so that the user can understand the purpose of each argument better.
@@ -48,11 +48,11 @@ var cmd = new ArgumentParser("MyProgram") {{
 
 <chapter title="Creating a group" switcher-key="Templates">
 
-Use the [``group()``](Command-Templates.md#setting-a-group) attribute in the
-[``@Argument.Define``](Command-Templates.md#the-argument-define-annotation) annotation to specify
+Use the [``group()``](Command-templates.md#setting-a-group) attribute in the
+[``@Argument.Define``](Command-templates.md#the-argument-define-annotation) annotation to specify
 the group that an argument belongs to.
 
-<include from="Command-Templates.md" element-id="define-annotation_group"></include>
+<include from="Command-templates.md" element-id="define-annotation_group"></include>
 
 </chapter>
 
@@ -76,7 +76,7 @@ var cmd = new ArgumentParser("MyProgram") {{
 
 <tip>
 
-For command templates, you will need to use the [``afterInit()``](Command-Templates.md#the-afterinit-method)
+For command templates, you will need to use the [``afterInit()``](Command-templates.md#the-afterinit-method)
 method to create nested groups.
 
 For example:
@@ -89,7 +89,7 @@ public static void afterInit(Command cmd) {
 }
 ```
 
-(In this case it is assumed that `child-group` was created using [`group()`](Command-Templates.md#setting-a-group))
+(In this case it is assumed that `child-group` was created using [`group()`](Command-templates.md#setting-a-group))
 
 </tip>
 

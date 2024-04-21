@@ -1,21 +1,4 @@
-# Advanced creation of Commands
-
-The aforementioned ``parseFromInto`` method in `ArgumentParser` has a pretty simple implementation. It abstracts
-the usual method chain that you would have to write to:
-
-- Initialize a command tree from a command template class.
-- Parse the command line arguments.
-- Put the received values into an instance of the command template class.
-
-Here's that method chain:
-
-````Java
-void main(String[] args) {
-	var result = ArgumentParser.from(MyCommand.class)
-		.parse(CLInput.from(args))
-		.into(MyCommand.class);
-}
-````
+# Advanced creation of commands
 
 ``ArgumentParser#from`` reads the command template class and creates a command tree from it (taking into account the
 possible sub-commands defined).

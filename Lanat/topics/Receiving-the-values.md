@@ -37,3 +37,90 @@ void main(String[] args) {
 
 This will return a ``AfterParseOptions`` object, which allows you to do some post-parsing operations that can be
 useful.
+
+
+
+## The `AfterParseOptions` class
+
+The `AfterParseOptions` class provides utility methods and defines a set of _actions_ to be performed right before the
+parsed values are given. These actions are only executed if a _terminator_ method is called.
+
+### Actions
+
+Use the `withActions` method to define the actions that will be executed. The actions are defined by a lambda that receives
+an `AfterParseActions` instance.
+
+```Java
+var afterParseOptions = myCommand.parse(CLInput.from(args));
+
+// define the actions method chain
+afterParseOptions.withActions(a -> a.printErrors().exitIfErrors());
+```
+
+These methods will be executed in the order they are chained. Here's a list of the available actions:
+
+<deflist>
+<def title="printErrors">
+
+Prints all errors that occurred during parsing to `System.err`.
+
+</def>
+
+<def title="printHelpIfNoInput">
+
+Prints the help message to `System.out` if no arguments were passed to the program.
+
+</def>
+
+<def title="exitIfErrors">
+
+Exits the program with the error code returned by `AfterParseOptions#getErrorCode()` if any errors occurred during parsing.
+
+</def>
+
+<def title="exitIfNoInput">
+
+Exits the program with a code of `0` if no arguments were passed to the program.
+
+</def>
+
+</deflist>
+
+
+<note>
+
+The default actions are defined by the `AfterParseOptions#DEFAULT_ACTIONS` constant. Which is defined as:
+
+```Java
+actions -> actions
+	.printErrors()
+	.printHelpIfNoInput()
+	.exitIfErrors()
+	.exitIfNoInput();
+```
+
+</note>
+
+
+### Terminator methods
+
+Terminator methods are methods that will execute the actions defined in the `AfterParseOptions` once called before returning
+the actual parsed values. The available terminator methods are:
+
+<deflist>
+
+<def title="getResult()">
+
+Returns a `ParseResultRoot` object that contains all the parsed arguments.
+
+</def>
+
+<def title="into(Class)" id="into-method">
+
+Instantiates the given Command Template class and sets all the fields annotated with
+[`@Argument.Define`](Command-templates.md#the-argument-define-annotation) corresponding to their respective parsed arguments.
+This method will also instantiate all the sub-commands recursively if defined in the template class properly.
+
+</def>
+
+</deflist>
