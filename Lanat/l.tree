@@ -30,7 +30,7 @@
     </toc-element>
     <toc-element topic="Argument-groups.md"/>
     <toc-element topic="Receiving-the-values.md">
-        <toc-element topic="Instantiating-Command-Template-class.md"/>
+        <toc-element topic="Instantiating-Command-Template.md"/>
         <toc-element topic="CLInput-class.md"/>
     </toc-element>
     <toc-element topic="Help-message.md">
