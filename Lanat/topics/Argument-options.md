@@ -5,7 +5,7 @@ Arguments have plenty of options to customize their behavior. All of these optio
 
 <deflist>
 
-<def title="Names">
+<def title="Names" id="names">
 
 The name or names (aka aliases) that the argument can be referred to by.
 Single character names can be used in argument name lists (e.g. ``-abc``), each alphabetic
@@ -97,7 +97,7 @@ alone and not with other arguments. It also doesn't matter if some other require
 </def>
 
 
-<def title="Prefix">
+<def title="Prefix" id="prefix">
 
 The prefix is the character that precedes the argument's name in the command line input. It must be a value defined in
 the ``Argument.PrefixChar`` enum.

@@ -40,6 +40,12 @@ The annotation allows to specify most of the properties of the argument, such as
 ``description()``, ``type()``, etc.
 
 
+### Setting the name
+
+The ``names()`` property is used to specify the names of the argument. If no name is provided, the name of the property
+will be used instead.
+
+
 ### How the argument type is set
 
 If an argument type class (`Class<ArgumentType>`) is provided in the ``type()`` property of the annotation, an instance

@@ -16,7 +16,7 @@ We are going to make an argument that takes an integer as input. We will call it
 
 <chapter title="Using Argument Templates" switcher-key="Templates">
 
-Add a new property to your command template class, and annotate it with ``@Argument.Define``.
+Add a new property to your command template class, and annotate it with [``@Argument.Define``](Command-templates.md#the-argument-define-annotation).
 
 ```Java
 @Command.Define
