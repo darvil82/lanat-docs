@@ -38,8 +38,9 @@ $ my-program --values (5 2 3)
 
 ## Uses of tuples
 
-Sometimes Lanat cannot tell exactly if some token is a value or another kind of token, like a sub-command. Lanat will always
-prioritize (if possible) to assume that the token is any other kind of token than a value. This is where tuples can help.
+Sometimes Lanat cannot tell exactly if some token is a value or another kind of token, like a sub-command (if the
+names happen to match). Lanat will always prioritize (if possible) to assume that the token is any other kind of
+token than a value. This is where tuples can help.
 
 Tuples also improve the readability of the input, making it easier to understand which values is each argument receiving.
 
