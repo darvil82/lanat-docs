@@ -76,7 +76,7 @@ public class MyProgram extends CommandTemplate {
 
 ## The main function
 
-Lastly, we'll define the code needed to make the program perform the desired behavior.
+Lastly, we'll write the main function that will parse the arguments and execute the operation.
 
 ````Java
 public static void main(String[] args) {

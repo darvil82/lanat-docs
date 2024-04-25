@@ -9,7 +9,6 @@
     <toc-element toc-title="Discover Lanat" topic="Discover-Lanat.topic">
         <toc-element topic="Acquire-lanat.md"/>
         <toc-element topic="Your-first-argument-parser.md"/>
-
     </toc-element>
     <toc-element topic="Commands.md">
         <toc-element topic="Sub-commands.md"/>
@@ -28,6 +27,7 @@
             <toc-element topic="Type-inference.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="Argument-groups.md"/>
     <toc-element topic="Receiving-the-values.md">
         <toc-element topic="Instantiating-Command-Template.md"/>
         <toc-element topic="parseFromInto.md"/>
@@ -43,5 +43,4 @@
             <toc-element topic="Creating-custom-tags.md"/>
         </toc-element>
     </toc-element>
-    <toc-element topic="Argument-groups.md"/>
 </instance-profile>

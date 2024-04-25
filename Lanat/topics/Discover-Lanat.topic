@@ -13,17 +13,23 @@
 
         <spotlight>
             <a href="Acquire-lanat.md" type="start" summary="Get started on how to get Lanat running">Get started</a>
-            <a href="" type="library" summary="Check out the whole Lanat documentation">Reference</a>
+            <a href="Commands.md" type="library" summary="Check out the whole Lanat documentation">Reference</a>
         </spotlight>
 
         <primary>
-            <title>Quick tutorials</title>
-            <a href="Commands.md" summary="Learn how to define a Command with Lanat">Define a command</a>
+            <title>Highlights</title>
+            <a href="Commands.md" summary="Defining a command with Lanat">Creating a command</a>
+            <a href="Arguments.md" summary="Creating and adding arguments to a command">Adding arguments</a>
+            <a href="Receiving-the-values.md" summary="Retrieving the values from the command line">Retrieving the values</a>
+            <a href="Argument-types.md" summary="The different types that can be used for arguments, and how to create more">
+                Argument types
+            </a>
         </primary>
 
         <secondary>
-            <title>Troubleshooting</title>
-            <a href="">Command Template errors</a>
+            <title>More</title>
+            <a href="Help-message.md" summary="Creating a rich help message for your program">Help message</a>
+            <a href="Argument-groups.md" summary="Grouping arguments together">Argument groups</a>
         </secondary>
     </section-starting-page>
 </topic>
