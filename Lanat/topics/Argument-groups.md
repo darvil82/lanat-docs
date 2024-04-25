@@ -74,7 +74,7 @@ var cmd = new ArgumentParser("MyProgram") {{
 }}
 ````
 
-<tip>
+<tip switcher-key="Templates">
 
 For command templates, you will need to use the [``afterInit()``](Command-templates.md#the-afterinit-method)
 method to create nested groups.
