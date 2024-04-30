@@ -125,3 +125,6 @@ This method will also instantiate all the sub-commands recursively
 </def>
 
 </deflist>
+
+> When called, terminator methods will also execute all the callbacks defined in the command structure.
+> {style="note"}
