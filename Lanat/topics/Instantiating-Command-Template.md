@@ -55,7 +55,7 @@ System.out.printf("a: %f, b: %f", result.a, result.b);
 > {style="note"}
 
 
-### Instantiating sub-commands as well
+## Instantiating sub-commands as well
 
 If the command template class has sub-commands defined, the `into` method will also instantiate them recursively if
 properly defined:
@@ -126,3 +126,20 @@ public static void main(String[] args) {
 > If there is a sub-command template class defined inside another template class, but there's no property annotated
 > with ``@CommandAccessor`` in the outer class, a ``CommandTemplateException`` will be thrown when it is instantiated.
 > {style="warning"}
+
+
+
+## @Argument.Define field type requirements
+
+When using the `into` method, the fields annotated with `@Argument.Define` must have a valid type for the value that has
+been parsed. If the type of the field is not compatible with the parsed value, an `IncompatibleCommandTemplateTypeException`
+will be thrown.
+
+Here are a few recommendations for the types of the fields:
+
+- Only use primitive types for arguments that you know will always return a non-null value, such as
+  [required](Argument-options.md#required) arguments, for example.
+- Make sure the field type is compatible with what the argument type will return. For example, if the argument is a
+  `StringArgumentType`, the field should be a `String`.
+- Wrap the field type in an `Optional` if you wish to use a `Optional.empty()` instead of `null` when no value is provided.
+  [Read more](Command-templates.md#how-the-argument-type-is-set).

@@ -42,8 +42,8 @@ useful.
 
 ## The `AfterParseOptions` class
 
-The `AfterParseOptions` class provides utility methods and defines a set of _actions_ to be performed right before the
-parsed values are given. These actions are only executed if a _terminator_ method is called.
+The `AfterParseOptions` class provides utility methods and defines a set of [_actions_](#actions) to be performed right before the
+parsed values are given. These actions are only executed if a [_terminator_](#terminator-methods) method is called.
 
 ### Actions
 
@@ -109,9 +109,9 @@ the actual parsed values. The available terminator methods are:
 
 <deflist>
 
-<def title="getResult()">
+<def title="getResult()" id="result-method">
 
-Returns a `ParseResultRoot` object that contains all the parsed arguments.
+Returns a [`ParseResultRoot`](ParseResult.md) object that contains all the parsed arguments.
 
 </def>
 
@@ -119,7 +119,8 @@ Returns a `ParseResultRoot` object that contains all the parsed arguments.
 
 Instantiates the given Command Template class and sets all the fields annotated with
 [`@Argument.Define`](Command-templates.md#the-argument-define-annotation) corresponding to their respective parsed arguments.
-This method will also instantiate all the sub-commands recursively if defined in the template class properly.
+This method will also instantiate all the sub-commands recursively
+[if defined in the template class properly](Instantiating-Command-Template.md).
 
 </def>
 

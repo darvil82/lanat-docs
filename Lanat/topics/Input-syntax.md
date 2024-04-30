@@ -49,9 +49,7 @@ argument [ = ] value
 > {style="note"}
 
 
-## Examples
-
-<procedure>
+<procedure title="Examples">
 <step>
 
 Argument with value:
@@ -107,6 +105,37 @@ Expanded into:
 - Argument `t`:
   - Value: `1`
   - Prefix: `/`
+
+</step>
+</procedure>
+
+
+
+## Forward value
+
+In some cases it may be useful to allow the user to provide a generic value to the program without specifying an argument.
+This is called a forward value. The syntax is (including the space):
+
+````
+-- value
+````
+
+- `value` is a string containing _anything_. Lanat will not attempt to parse this.
+
+<procedure title="Example">
+<step>
+
+Simple program that would run another program (`cat`) with some provided arguments forwarded to it:
+
+```Console
+$ run-with --cmd "grep" -- -r "pattern" "file.txt"
+```
+
+Expanded into:
+- Argument `cmd`:
+  - Value: `grep`
+  - Prefix: `-`
+- Forward value: `-r "pattern" "file.txt"`
 
 </step>
 </procedure>

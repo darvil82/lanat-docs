@@ -51,7 +51,7 @@ If both are set, **the argument's default value will have priority.**
 
 </def>
 
-<def title="Required">
+<def title="Required" id="required">
 
 Marks the argument as required. If the user does not provide a value for this argument, an error will be thrown by Lanat
 indicating that the argument is missing.
