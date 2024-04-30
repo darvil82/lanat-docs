@@ -100,14 +100,14 @@ mentioned above, while also provides the following:
 > when appropriate (that is, only when using it on the root command).
 
 <deflist>
-<def title="getForwardValue">
+<def title="getForwardValue()">
 
 Returns an `Optional<String>` object that contains the [forward value](Input-syntax.md#forward-value)
 (if it was provided by the user).
 
 </def>
 
-<def title="getUsedResults">
+<def title="getUsedResults()">
 
 Returns a list of all the `ParseResult` objects that belong to a command that was used by the user. The list is ordered
 from the root command to the last used command.
