@@ -45,4 +45,5 @@
             <toc-element topic="Creating-custom-tags.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="Errors.md"/>
 </instance-profile>

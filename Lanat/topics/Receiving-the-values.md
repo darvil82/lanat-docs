@@ -60,25 +60,25 @@ afterParseOptions.withActions(a -> a.printErrors().exitIfErrors());
 These methods will be executed in the order they are chained. Here's a list of the available actions:
 
 <deflist>
-<def title="printErrors()">
+<def title="printErrors()" id="printErrors">
 
-Prints all errors that occurred during parsing to `System.err`.
+Prints all errors that occurred during parsing (Returned by `AfterParseOptions#getErrors()`) to `System.err`.
 
 </def>
 
-<def title="printHelpIfNoInput()">
+<def title="printHelpIfNoInput()" id="printHelpIfNoInput">
 
 Prints the help message to `System.out` if no arguments were passed to the program.
 
 </def>
 
-<def title="exitIfErrors()">
+<def title="exitIfErrors()" id="exitIfErrors">
 
 Exits the program with the error code returned by `AfterParseOptions#getErrorCode()` if any errors occurred during parsing.
 
 </def>
 
-<def title="exitIfNoInput()">
+<def title="exitIfNoInput()" id="exitIfNoInput">
 
 Exits the program with a code of `0` if no arguments were passed to the program.
 
