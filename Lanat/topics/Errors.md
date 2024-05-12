@@ -3,7 +3,8 @@
 Lanat displays error messages in the terminal when it encounters errors in the input. As explained previously
 [here](Argument-Type-parsing-process.md#error-collection), Lanat collects all the errors that occurred during parsing.
 
-They are thrown by _error containers_, such as [commands](Commands.md), [argument types](Argument-types.md) or the parser.
+They are thrown by _error containers_, such as [commands](Commands.md), [argument types](Argument-types.md) or the parser, and later
+collected and displayed to the user.
 
 ![an error](example-result.png)
 
@@ -78,6 +79,32 @@ var cmd = new ArgumentParser("my-program") {{
 
 Here, if `arg1` throws an error with a level of `INFO`, it will be shown, but will not cause the program to exit.
 However, if `arg2` throws it, it will, because the minimum display error level is set to `INFO` on the sub-command.
+
+</step>
+</procedure>
+
+
+## Exit error code
+
+When the program exits due to an error, by default, it returns with a code of `1`. This value can be easily changed by
+calling the `setErrorCode` method on the command:
+
+````Java
+command.setErrorCode(3);
+````
+
+Commands in the hierarchy can have different error codes. The one that will be used to exit the program is actually
+the result of the `OR` operation between all the error codes of the commands that thrown errors during parsing.
+
+<procedure title="Example">
+<step>
+
+Assume we have the following command structure:
+
+- Command `foo` has an error code value of `2`. (`0b010`)
+- Command `bar` has an error code value of `5`. (`0b101`)
+
+Both commands failed, so in this case the program will exit with a return value of `7`. (`0b111`)
 
 </step>
 </procedure>

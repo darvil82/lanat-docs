@@ -198,7 +198,7 @@ public class MyProgram extends CommandTemplate {
 	
 	// entry point here
 	public static void main(String[] args) {
-		var result = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
+		var result = ArgumentParser.parseFromInto(MyProgram.class, args);
 	
 		System.out.println(result.op.execute(result.a, result.b));
 	}
