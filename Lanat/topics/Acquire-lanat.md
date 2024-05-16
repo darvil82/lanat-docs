@@ -3,11 +3,6 @@
 The Lanat package is available on a Repsy repository and on GitHub.
 You may get it from either of these sources.
 
-> **IMPORTANT**
-> 
-> This documentation refers to the version `1.0.0`, which is still in development and not yet released.
-> {style="warning"}
-
 ## Adding the dependency to your project
 
 Here's the repository and dependency information you need to add to your project
