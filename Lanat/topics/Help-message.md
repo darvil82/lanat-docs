@@ -105,6 +105,8 @@ Number of arguments:
 The function specified doesn't explicitly need to comply with ``Function<Command, String>``.
 It can also be a ``Supplier<String>`` or just a `String`.
 
+> If needed, you can check out the position of each layout item by changing `HelpFormatter#debugLayout` to `true`.
+> {style="note"}
 
 ### Default generators
 
