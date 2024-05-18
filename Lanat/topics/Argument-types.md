@@ -7,7 +7,7 @@ That's the job of an argument type. An argument type is a class that extends `Ar
 to parse a number of strings into a value of type `T`, and what occurs when the parsing fails, among other things.
 
 
-## Default Argument types
+## Default argument types
 
 Lanat comes with a set of default argument types that you can use out of the box.
 
