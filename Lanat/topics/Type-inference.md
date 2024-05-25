@@ -98,3 +98,46 @@ Use the ``withPrimitive`` variants of the methods to register/unregister inferen
 
 > Note that in this example the inference ``Integer[].class`` has not been overridden, so it will still use the
 > default inference made by Lanat.
+
+
+
+## Predicate inferences
+
+Inferences can also be created based on a predicate. This is useful when you want to infer a type based on some condition,
+rather than the exact type.
+
+```Java
+ArgumentTypeInfer.register(
+	Record.class::isAssignableFrom, // predicate
+	MyCoolArgumentType::new, // type supplied when satisfied
+	"MyCoolArgumentType" // name of the inference
+);
+```
+
+In this example, the `MyCoolArgumentType` will be used for any class that is a subclass of `Record`.
+
+<deflist>
+<def title="Unregistering">
+
+To unregister a predicate inference, you can use the name of the inference:
+
+```Java
+ArgumentTypeInfer.unregister("MyCoolArgumentType");
+```
+
+</def>
+
+<def title="Get defined inferences">
+
+You can get a list of all defined predicate inferences by calling ``ArgumentTypeInfer#getPredicateInfers()``.
+
+</def>
+</deflist>
+
+> Please note that while predicate inferences provide a finer control over the type inference process, they are slower
+> to lookup than regular inferences. Only use them when necessary.
+> {style="warning"}
+
+> Regular inferences have a higher priority than predicate inferences. If a regular inference is found for a type, a
+> possibly matching predicate inference will be ignored.
+> {style="note"}

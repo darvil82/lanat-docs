@@ -54,6 +54,14 @@ Lanat comes with a set of default argument types that you can use out of the box
 		The user can specify any of the enum values by their names.
 		The names are case-insensitive.
 	</p>
+
+	
+> In the enum class, one of the values may be annotated with <code>@EnumArgumentType.Default</code>, which will mark
+> the value to be used when the user doesn't provide any.
+
+> If needed, you can change the name of an enum value that the user must provide by using the
+> <code>@EnumArgumentType.WithName</code> annotation.
+
 </def>
 
 <def title="OptListArgumentType">
