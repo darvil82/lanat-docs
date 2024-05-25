@@ -100,7 +100,7 @@ public static void main(String[] args) {
 
 Running the program now will result in the following output:
 
-![example-result.png](example-result.png "Result on the terminal")
+![Result on the terminal](example-result.png){width="700"}
 
 > Notice how Lanat shows an error message for you when the user incorrectly provides an unknown value.
 > We will learn more about how errors are handled later.
