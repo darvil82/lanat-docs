@@ -19,13 +19,15 @@ class MyCommand extends CommandTemplate {
 }
 ```
 
-Note the ``args.arg1`` value in the ``<desc>`` tag. This is a _route_ which references the argument named ``arg1``
+Note the ``args.arg1`` value in the ``<desc>`` tag. This is a [route](Element-routes.md) which references the argument named ``arg1``
 in the current command.
 
 We can quickly check the result of this by using ``DescriptionParser#parse()``:
 
 ```Java
-var cmd = ArgumentParser.from(MyCommand.class); // create a command instance from the template
+// create a command instance from the template
+var cmd = ArgumentParser.from(MyCommand.class);
+
 System.out.println(DescriptionParser.parse(cmd));
 ```
 
