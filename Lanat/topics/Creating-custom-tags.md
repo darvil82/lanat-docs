@@ -74,6 +74,5 @@ You can unregister a tag by calling ``Tag.unregister`` with the name of the tag.
 Tag.unregister("mytag");
 ```
 
-This will remove the tag from the list of registered tags, and it will no longer be usable in descriptions.
-
-This can be useful to override an already registered tag with a new implementation, for example.
+This will remove the tag from the list of registered tags, and it will no longer be usable in descriptions. This can
+be useful to override an already registered tag with a new implementation, for example.
