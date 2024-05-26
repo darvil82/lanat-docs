@@ -58,12 +58,50 @@ If no type is provided, Lanat will attempt to infer the argument type from the t
 assigned to. For example, if the property is of type ``int``, Lanat will use the ``IntegerArgumentType`` as the type of
 the argument. See more about argument type inference [here](Type-inference.md).
 
+> You can specify any class in the ``type()`` property, even if it is not an ``ArgumentType``. Lanat will attempt to
+> infer it as well, just as if it was a property type.
+
 > You can wrap the field type in an ``Optional``. When gathering the parsed values, if the argument does not provide a
 > value, the field will be set to ``Optional.empty()`` instead of ``null``.
 > 
 > Note that it is not possible for Lanat to know the type parameter of the ``Optional``. You will have to specify the
 > type of the argument manually.
 > {style="note"}
+
+<procedure title="Examples">
+<step>
+
+Here, the argument type is inferred from the type of the property. (`StringArgumentType`)
+
+```Java
+@Argument.Define
+public String arg;
+```
+
+</step>
+
+<step>
+
+Here, the argument type is explicitly set to `IntegerArgumentType`.
+
+```Java
+@Argument.Define(type = IntegerArgumentType.class) 
+public int arg;
+```
+
+</step>
+
+<step>
+
+Since `Optional` wraps the type, it is necessary to explicitly set the type of the argument. (`Integer`)
+
+```Java
+@Argument.Define(type = Integer.class) // or IntegerArgumentType.class
+public Optional<Integer> arg;
+```
+
+</step>
+</procedure>
 
 
 ### Setting a ``group()``
