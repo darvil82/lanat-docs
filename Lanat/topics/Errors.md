@@ -6,7 +6,7 @@ Lanat displays error messages in the terminal when it encounters errors in the i
 They are thrown by _error containers_, such as [commands](Commands.md), [argument types](Argument-types.md) or the parser, and later
 collected and displayed to the user.
 
-![an error](example-result.png)
+![an error](example-result.png){width=700}
 
 
 ## Error levels
