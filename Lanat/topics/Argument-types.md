@@ -13,42 +13,42 @@ Lanat comes with a set of default argument types that you can use out of the box
 
 <deflist>
 
-<def title="StringArgumentType">
+<def title="StringArgumentType" id="StringArgumentType">
 	Parses a single string. Essentially just forwards the user input.
 </def>
 
-<def title="StdinArgumentType">
+<def title="StdinArgumentType" id="StdinArgumentType">
 	Parses the standard input stream. This is useful for commands that receive input from a pipe.
 </def>
 
-<def title="CounterArgumentType">
+<def title="CounterArgumentType" id="CounterArgumentType">
 	Receives no input. It's return value is the number of times it has been used.
 </def>
 
-<def title="BooleanArgumentType">
+<def title="BooleanArgumentType" id="BooleanArgumentType">
 	Parses a boolean value. Accepts <code>true</code>, <code>false</code>, <code>yes</code>, <code>no</code>, <code>1</code> and <code>0</code>.
 </def>
 
-<def title="ActionArgumentType">
+<def title="ActionArgumentType" id="ActionArgumentType">
 	Receives no input. It returns <code>true</code> if the argument was used. This type is mostly used for when you want
 	to make an argument execute some code when it is used, but you don't want it to receive any input.
 </def>
 
-<def title="TupleArgumentType">
+<def title="TupleArgumentType" id="TupleArgumentType">
 	Parses multiple values received from the user by using the argument type provided in the constructor.
 	Returns a <code>T[]</code>.
 </def>
 
-<def title="NumberRangeArgumentType">
+<def title="NumberRangeArgumentType" id="NumberRangeArgumentType">
 	Parses a number within a given range. The range is given in the constructor.
 </def>
 
-<def title="KeyValuesArgumentType">
+<def title="KeyValuesArgumentType" id="KeyValuesArgumentType">
 	Takes key-value pairs. The key is a string, and the value is of the argument type given in the
 	constructor. The key-value pairs are separated by an equals sign (e.g. <code>key=value</code>).
 </def>
 
-<def title="EnumArgumentType">
+<def title="EnumArgumentType" id="EnumArgumentType">
 	An argument type that takes a valid enum value.
 	<p>
 		The user can specify any of the enum values by their names.
@@ -64,11 +64,11 @@ Lanat comes with a set of default argument types that you can use out of the box
 
 </def>
 
-<def title="OptListArgumentType">
+<def title="OptListArgumentType" id="OptListArgumentType">
 	An argument type that restricts a possible value out of a list of values.
 </def>
 
-<def title="TryParseArgumentType">
+<def title="TryParseArgumentType" id="TryParseArgumentType">
 	Attempts to parse a string into the type given in the constructor.
 	The type given must have a static <code>valueOf(String)}</code>, <code>parse(String)}</code>, or
 	<code>from(String)}</code> method, or a constructor that takes a string.
@@ -94,13 +94,13 @@ These argument types provide ways to define new argument types.
 
 <deflist>
 
-<def title="FromParseableArgumentType">
+<def title="FromParseableArgumentType" id="FromParseableArgumentType">
 	An argument type that uses a <code>Parseable</code> to parse values. If the <code>parseValues(String[])</code>
 	method of the given <code>Parseable</code> returns <code>null</code>, an error is added.
 	The error message can be specified in the constructor.
 </def>
 
-<def title="SimpleArgumentType">
+<def title="SimpleArgumentType" id="SimpleArgumentType">
 	An argument type that allows to define its behavior by using a builder pattern. This basically provides another
 	way to define an argument type.
 </def>
