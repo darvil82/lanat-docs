@@ -48,7 +48,8 @@ the `parseValues` method will be called once with the values provided by the use
 
 <def title="Initial Value">
 
-When an argument type invokes the `super` constructor, it may provide an initial value for the argument type.
+An argument type may specify an initial value by using the proper constructor overload, or by calling
+the `setInitialValue` method.
 
 ```Java
 public MyArgumentType() {
@@ -56,14 +57,20 @@ public MyArgumentType() {
 }
 ```
 
-In this example, the argument type will have an initial value of `1500`. Setting the initial value also sets the current
-value of the argument type.
+In this example, the argument type will have an initial value of `1500`.
+
+> When setting it by calling the super constructor overload, the current value will also be set to the initial value.
+> {style="note"}
 
 The initial value is used in cases such as when an argument should always return a value, but the user did not provide one.
 For instance, the `CounterArgumentType` always returns a value. If the user never used the argument, it will return the
 initial value, which is `0`.
 
 > The initial value can be retrieved at any time by calling the `getInitialValue` method.
+
+> The initial value is also used when resetting the state of the argument type. When the argument type is reset, the
+> current value will be set to the initial value.
+> {style="note"}
 
 </def>
 
