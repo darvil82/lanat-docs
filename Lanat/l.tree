@@ -46,4 +46,7 @@
         </toc-element>
     </toc-element>
     <toc-element topic="Errors.md"/>
+    <toc-element toc-title="Advanced">
+        <toc-element topic="State.md"/>
+    </toc-element>
 </instance-profile>
