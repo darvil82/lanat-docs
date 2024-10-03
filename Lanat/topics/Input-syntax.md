@@ -125,7 +125,7 @@ This is called a forward value. The syntax is (including the space):
 <procedure title="Example">
 <step>
 
-Simple program that would run another program (`cat`) with some provided arguments forwarded to it:
+Simple program that would run another program (`grep`) with some provided arguments forwarded to it:
 
 ```Console
 $ run-with --cmd "grep" -- -r "pattern" "file.txt"

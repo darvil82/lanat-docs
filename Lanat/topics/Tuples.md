@@ -13,7 +13,7 @@ brackets are the tuple characters.
 <procedure title="Changing the tuple characters" id="changing_the_tuple_characters_to_use">
 <step>
 
-Before parsing the arguments, you can change the tuple characters to use by setting the `TupleChar#current` constant.
+Before parsing the arguments, you can change the tuple characters to use by setting the `TupleChar#current` property.
 
 ````Java
 TupleChar.current = TupleChar.PARENTHESIS;

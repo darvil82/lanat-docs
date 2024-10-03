@@ -11,7 +11,15 @@
 
     <build-profile instance="l">
         <variables>
-            <noindex-content>true</noindex-content>
+            <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
+
+    <sitemap priority="0.35" change-frequency="monthly"/>
+
+    <footer>
+        <link href="https://darvil82.github.io/lanat-web/">Website</link>
+        <link href="https://github.com/darvil82/lanat">Repository</link>
+        <link href="https://darvil82.github.io/lanat">JavaDocs</link>
+    </footer>
 </buildprofiles>
