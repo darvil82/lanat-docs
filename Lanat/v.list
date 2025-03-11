@@ -3,6 +3,6 @@
 <vars>
     <var name="product" value="Lanat"/>
     <var name="latest_version" value="1.2.0"/>
-    <var name="repo" value="https://repsy.io/mvn/darvil/java"/>
+    <var name="repo" value="https://api.repsy.io/mvn/darvil/java"/>
     <var name="group" value="com.darvil"/>
 </vars>
