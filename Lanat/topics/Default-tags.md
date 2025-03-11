@@ -63,8 +63,8 @@ Shows as:
 
 Changes the color of the text.
 
-The syntax for specifying colors is `foreground[:background]`, where ``foreground`` and ``background``
-follow the syntax ``color_name|#rrggbb|r,g,b``.
+The syntax for specifying colors is `foreground[:background]` or `[foreground]:background`,
+where ``foreground`` and ``background`` follow the syntax ``color_name|#rrggbb|r,g,b``.
 
 * `#rrggbb` is the hexadecimal value of the color.
 * `r,g,b` are the RGB values of the color.
