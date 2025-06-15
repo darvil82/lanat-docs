@@ -42,7 +42,9 @@
         <toc-element topic="Description-tags.md">
             <toc-element topic="Default-tags.md"/>
             <toc-element topic="Element-routes.md"/>
-            <toc-element topic="Creating-custom-tags.md"/>
+            <toc-element topic="Creating-custom-tags.md">
+                <toc-element topic="Handling-element-routes.md"/>
+            </toc-element>
         </toc-element>
     </toc-element>
     <toc-element topic="Errors.md"/>

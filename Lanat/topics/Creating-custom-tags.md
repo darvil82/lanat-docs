@@ -62,6 +62,13 @@ The user of a tag is the element that the description (that contains the tag) be
 A tag can be present in a description of an element, which can be a command, an argument, group, etc. (Anything
 implementing ``NamedWithDescription``)
 
+> `NamedWithDescription` is an interface that represents an element that has a name and a description. (Duh!)
+> It is implemented by commands, arguments, groups, and other elements in Lanat.
+
+When a tag is parsed, it receives the user of the tag as the first parameter of the ``parse`` method. This allows the tag
+
+
+
 When a description is parsed, the target it belongs to is passed to the tag when ``parse`` is called. This allows the
 tag to access this element and its properties.
 
