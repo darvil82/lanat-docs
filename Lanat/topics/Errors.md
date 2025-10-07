@@ -78,7 +78,7 @@ var cmd = new ArgumentParser("my-program") {{
 ```
 
 Here, if `arg1` throws an error with a level of `INFO`, it will be shown, but will not cause the program to exit.
-However, if `arg2` throws it, it will, because the minimum display error level is set to `INFO` on the sub-command.
+However, if `arg2` throws it, it will, because the minimum exit error level is set to `INFO` on the sub-command.
 
 </step>
 </procedure>
