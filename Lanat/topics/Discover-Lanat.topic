@@ -12,7 +12,7 @@
         </description>
 
         <spotlight>
-            <a href="Acquire-lanat.md" type="start" summary="Get started on how to get Lanat running">Get started</a>
+            <a href="Getting-Lanat.md" type="start" summary="Get started on how to get Lanat running">Get started</a>
             <a href="Commands.md" type="library" summary="Check out the whole Lanat documentation">Reference</a>
         </spotlight>
 
