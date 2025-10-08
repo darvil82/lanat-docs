@@ -37,7 +37,7 @@ public Range getUsageCountBounds() {
 
 In this example, the argument type will require the user to use it at least once, but it can be used any number of times.
 
-> The minimum number of times can not be zero. In order to allow the argument type to not be used, mark
+> The number of times can not be zero. In order to allow the argument type to not be used, mark
 > the argument that will use this type as optional.
 
 This will impact the number of times the `parseValues` method will be called. For each time the argument type is used,

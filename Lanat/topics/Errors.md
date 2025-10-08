@@ -18,44 +18,50 @@ based on their severity. By default, errors with level `ERROR` will cause the pr
 exit code, while other levels will not. This behavior can be changed by the user on any error container:
 
 <deflist>
-<def title="Minimum exit level">
+<def title="Error exit threshold">
 
-The minimum level at which the program will exit with a non-zero exit code. The default value is `ERROR`, which
+The threshold at which the program will exit with a non-zero exit code. The default value is `ERROR`, which
 means that only errors with level `ERROR` will cause the program to exit.
 
-For example, making `WARNING` also cause the program to exit:
+For example, if this is set to `WARNING`, then errors including `WARNING` and `ERROR` will cause the program to exit, but
+`INFO` and below will not.
+
+Here we are making `WARNING` also cause the program to exit:
 
 ````Java
-command.setMinimumExitErrorLevel(ErrorLevel.WARNING);
+command.setErrorExitThreshold(ErrorLevel.WARNING);
 ````
 
 > The program exists when the pertinent [after-parse action](Receiving-the-values.md#exitIfErrors) is executed.
 > {style="note"}
 
 </def>
-<def title="Minimum display level">
+<def title="Error display threshold">
 
-The minimum level at which the error will be displayed to the user. The default value is `INFO`, which means that
+The threshold at which the error will be displayed to the user. The default value is `INFO`, which means that
 only errors with level `INFO` or higher will be displayed (no `DEBUG` errors).
 
-For example, making `DEBUG` errors also be displayed:
+For example, if this is set to `INFO`, then errors including `INFO`, `WARNING` and `ERROR` will be displayed, but
+`DEBUG` will not.
+
+Here we are making `DEBUG` errors also be displayed:
 
 ````Java
-command.setMinimumDisplayErrorLevel(ErrorLevel.DEBUG);
+command.setErrorDisplayThreshold(ErrorLevel.DEBUG);
 ````
 
 </def>
 </deflist>
 
-> The minimum exit error level can never be lower than the minimum display error level, since errors that would cause
+> The error exit threshold level can never be lower than the display threshold, since errors that would cause
 > the program to exit must also be displayed to the user.
 > {style="warning"}
 
 
 ## Error containers nesting
 
-When changing the minimum error levels on a command, this change will be propagated to all sub-commands and argument types
-right before parsing. However, this doesn't mean you can't change the minimum error levels on each sub-command
+When changing the error thresholds on a command, this change will be propagated to all sub-commands and argument types
+right before parsing. However, this doesn't mean you can't change the thresholds on each sub-command
 individually.
 
 <procedure title="Example">
@@ -65,12 +71,12 @@ Consider this example where we have the next command structure:
 
 ```Java
 var cmd = new ArgumentParser("my-program") {{
-	setMinimumExitErrorLevel(ErrorLevel.WARNING);
+	setErrorExitThreshold(ErrorLevel.WARNING);
 
 	addArgument(Argument.create(new MyType(), "arg1"));
 
 	addCommand(new Command("sub-command") {{
-		setMinimumExitErrorLevel(ErrorLevel.INFO);
+		setErrorExitThreshold(ErrorLevel.INFO);
 		
 		addArgument(Argument.create(new MyType(), "arg2"));
 	}});
@@ -78,7 +84,7 @@ var cmd = new ArgumentParser("my-program") {{
 ```
 
 Here, if `arg1` throws an error with a level of `INFO`, it will be shown, but will not cause the program to exit.
-However, if `arg2` throws it, it will, because the minimum exit error level is set to `INFO` on the sub-command.
+However, if `arg2` throws it, it will, because the exit error threshold is set to `INFO` on the sub-command.
 
 </step>
 </procedure>
