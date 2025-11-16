@@ -3,15 +3,6 @@
 When calling the [`getResult` terminator method](Receiving-the-values.md#result-method), you will receive a `ParseResult` object.
 This object allows you to easily access the parsed values.
 
-
-<tip id="cmd-templates-result">
-
-For [instantiated command templates](Instantiating-Command-Template.md), you can access the `ParseResult` object by calling
-the `getParseResult` method on the instantiated command template, or by overriding the `onUsed(ParseResult)` method in the
-command template.
-
-</tip>
-
 <procedure title="Accessing the parsed values" id="access-values">
 <step>
 
@@ -73,31 +64,11 @@ var subResult = result.getSubResult("main-cmd")
 </procedure>
 
 
-<procedure title="See if a command was used" id="check-command-used">
-<step>
-
-You can, on any `ParseResult` in the hierarchy, check if the command it belongs to was used by calling the `wasUsed` method:
-
-```Java
-if (result.getSubResult("subcmd").wasUsed()) {
-	System.out.println("Sub-command was used");
-}
-```
-
-</step>
-</procedure>
-
 
 ## ParseResultRoot
 
 The `ParseResultRoot` object is the root of the `ParseResult` hierarchy. It inherits `ParseResult`, thus it has the methods
 mentioned above, while also provides the following:
-
-> The `ParseResultRoot` object is returned by the `getResult` terminator method.
-> 
-> In order to access this instance in
-> command templates, you will need to [cast the `ParseResult` object](#cmd-templates-result) to `ParseResultRoot`
-> when appropriate (that is, only when using it on the root command).
 
 <deflist>
 <def title="getForwardValue()">

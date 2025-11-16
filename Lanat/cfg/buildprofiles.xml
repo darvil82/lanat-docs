@@ -20,6 +20,8 @@
     <footer>
         <link href="https://darvil82.github.io/lanat-web/">Website</link>
         <link href="https://github.com/darvil82/lanat">Repository</link>
+        <link href="https://github.com/darvil82/lanat/releases">Updates</link>
+        <link href="https://apidia.net/mvn/io.github.darvil82/lanat">JavaDocs (APIdia)</link>
         <link href="https://darvil82.github.io/lanat">JavaDocs</link>
     </footer>
 </buildprofiles>
