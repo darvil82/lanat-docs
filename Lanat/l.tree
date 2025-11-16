@@ -31,7 +31,7 @@
     <toc-element topic="Receiving-the-values.md">
         <toc-element topic="ParseResult.md"/>
         <toc-element topic="Instantiating-Command-Template.md"/>
-        <toc-element topic="Seeing-if-command-was-used.md"/>
+        <toc-element topic="Check-command-usage.md"/>
         <toc-element topic="parseFromInto.md"/>
         <toc-element topic="CLInput-class.md"/>
     </toc-element>

@@ -2,9 +2,9 @@
 switcher-label: Command creation method
 ---
 
-# Seeing if command was used
+# Check command usage
 
-It is often useful to know if the user interacted with some specific command. Lanat offers a few ways to check this,
+It is often useful to know if the user interacted with some specific command. Lanat offers two main ways to check this,
 each with its own use case.
 
 ## Provide a callback
