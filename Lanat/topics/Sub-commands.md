@@ -29,11 +29,15 @@ We are still missing something, as this code will make Lanat throw a ``CommandTe
 This is because at the time of gathering the parsed values, we have no way of actually accessing an instance
 of the sub-command class.
 
-We need to add another property which will hold an instance of the sub-command class once it is parsed:
+We need to add another property to the parent command and annotate it with [`CommandAccesor`](Command-templates.md#the-commandaccessor-annotation)
+which will hold an instance of the sub-command class once it is parsed:
 
 ````Java
 @Command.Define
 class MyCommand extends CommandTemplate {
+	@CommandAccesor
+    public SubCommand subCommand; // to access the subCommand upon instantiation
+	
 	@Command.Define
 	static class SubCommand extends CommandTemplate {
 		@Argument.Define

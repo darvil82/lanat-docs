@@ -51,7 +51,7 @@ will be used instead.
 If an argument type class (`Class<ArgumentType>`) is provided in the ``type()`` property of the annotation, an instance
 of that class will be used as the type of the argument.
 
-> The class specified must have a public no-args constructor for it to be properly instantiated by Lanat.
+> The argument type class specified must have a public no-args constructor for it to be properly instantiated by Lanat.
 > {style="warning"}
 
 If no type is provided, Lanat will attempt to infer the argument type from the type of the property that the argument is
@@ -141,9 +141,9 @@ They must be annotated with `@InitDef`.
 
 ### The `beforeInit` method
 
-This method is called before the arguments are added to the command. It receives a ``CommandBuildContext`` instance, which
+This method is called before the arguments are added to the command instance. It receives a ``CommandBuildContext`` instance, which
 allows to access the argument builders. At the point of this method being called, the argument builders have already
-been created with the properties defined by the annotations, except for the `type()` property, which is not yet set.
+been created using the data from the properties defined with the annotations, except for the `type()` property, which is not set yet.
 
 This allows you to properly set the type of the argument by using the `ArgumentBuilder#type` method, which is
 exactly what we need for the example mentioned above.
