@@ -7,7 +7,8 @@ Lanat provides a few tags that are ready to be used in descriptions:
 
 <def title="link">
 
-Gets the representation of the target object specified by the [route](Element-routes.md).
+Gets the [representation](Help-message.md#get-representations-from-elements) of the target object specified
+by the [route](Element-routes.md).
 
 Example:
 

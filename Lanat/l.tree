@@ -47,7 +47,10 @@
             </toc-element>
         </toc-element>
     </toc-element>
-    <toc-element topic="Errors.md"/>
+    <toc-element topic="Errors.md">
+        <toc-element topic="Defining-custom-error-types.md"/>
+        <toc-element topic="Error-formatters.md"/>
+    </toc-element>
     <toc-element toc-title="Advanced">
         <toc-element topic="State.md"/>
     </toc-element>

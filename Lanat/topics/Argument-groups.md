@@ -126,7 +126,7 @@ public static void afterInit(Command cmd) {
 
 Given the following group tree **(lime colored groups are restrictive)**:
 
-![Group hierarchy](groups_diagram.png)
+![Group hierarchy](groups.png)
 
 * If `Argument 1` is used, then none of the arguments in the child groups can be used, because `Group 1` is restricted.
 * If `Argument 3.1` is used, then none of the arguments in the rest of the tree can be used, because both

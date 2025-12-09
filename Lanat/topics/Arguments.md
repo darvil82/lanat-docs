@@ -6,7 +6,7 @@ switcher-label: Command creation method
 # Arguments
 
 An argument is a descriptor for a kind of value that the user can provide to the command. For example, in the command
-`git commit -m "Hello World"`, the argument is `-m` and it's value is `"Hello World"`. It provides a way for the user
+`git commit -m "Hello World"`, the argument is `-m` and its value is `"Hello World"`. It provides a way for the user
 to provide input to the command.
 
 

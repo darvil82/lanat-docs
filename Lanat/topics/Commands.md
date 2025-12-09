@@ -58,7 +58,7 @@ class MyCommand extends CommandTemplate {
 }
 ````
 
-We just added a new argument to our command template. This argument is called `userName` and it's type is
+We just added a new argument to our command template. This argument is called `userName` and its type is
 ``StringArgumentType``. This means that the user will have to provide a string as input for this argument.
 
 #### Creating the command instance

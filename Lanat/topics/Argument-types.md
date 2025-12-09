@@ -22,7 +22,7 @@ Lanat comes with a set of default argument types that you can use out of the box
 </def>
 
 <def title="CounterArgumentType" id="CounterArgumentType">
-	Receives no input. It's return value is the number of times it has been used.
+	Receives no input. Its return value is the number of times it has been used.
 </def>
 
 <def title="BooleanArgumentType" id="BooleanArgumentType">

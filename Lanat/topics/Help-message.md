@@ -74,6 +74,13 @@ to it. You can also set the title, indent, and margin for each layout item.
 > ``HelpFormatter`` contains plenty of utility methods to remove, move, add, and replace layout items.
 > {style="note"}
 
+### Get representations from elements
+
+This is the formatted and colored representation of the element. (The one used in the help message generation,
+for instance)
+You can easily get the representation of Lanat elements, such as commands, arguments, groups, and so on, by using
+`HelpFormatter.getRepresentation(obj)`.
+
 
 ## Layout Items
 
