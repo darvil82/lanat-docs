@@ -89,13 +89,15 @@ The formatter is populated with the data given by the current error we are handl
 error level or the highlight options. However, the contexts supplied on the `generateXView()`, provide a finer access
 and manipulation of error type specific properties.
 
+![ErrorContexts](errorcontexts.png)
+
 `ErrorFormatter` provides you with a few useful methods such as `getContent()`, `getDisplayOptions()`,
 `getErrorLevelFormatter()`, etc, to make it easier for you to generate the output.
 
-
+Here's a simple example of a custom error formatter:
 
 ```Java
-public static class TestFormatter extends ErrorFormatter {
+public class TestFormatter extends ErrorFormatter {
 	public TestFormatter(ErrorContext currentErrorContext) {
 		super(currentErrorContext);
 	}
@@ -103,7 +105,7 @@ public static class TestFormatter extends ErrorFormatter {
 	@Override
 	protected String generate() {
 		return this.getContentSingleLine() + System.lineSeparator()
-			+ "\t(" + this.getErrorLevel().name()
+			+ "\t(" + this.getErrorLevel().name().toLowerCase()
 			+ " caused by '" + this.getGeneratedView() + "').";
 	}
 
@@ -130,6 +132,22 @@ public static class TestFormatter extends ErrorFormatter {
 }
 ```
 
+To easily test it out and see how it performs, let's create this little snippet;
 
+```Java
+new ArgumentParser("App")
+    .parse(CLInput.from("testing [ some more"))
+	.getErrors()
+    .forEach(System.out::println);
+```
 
-![ErrorContexts](errorcontexts.png)
+Here we create a completely empty command, for this error, we don't really need to have any arguments or so added.
+Here's the output given by that:
+
+![Error Formatter output](testErrorFormatterOutput.png)
+
+And here's how it would look like if we actually supplied an incorrect value to some argument;
+
+![Error Formatter output with tokens](testErrorFormatterOuput2.png)
+
+As you can see, depending on the kind of error (tokenizer or parser), the formatter displays it accordingly.
