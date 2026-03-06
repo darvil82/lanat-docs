@@ -11,7 +11,7 @@ parsing the route and returning the element it points to.
 ```java
 var command = ArgumentParser.from(Program.class);
 
-// element is the arugment `my-arg` of the command given
+// element is the argument `my-arg` of the command given
 var element = RouteParser.parse(command, "args.my-arg");
 ```
 
